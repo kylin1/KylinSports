@@ -1,4 +1,4 @@
-@extends('sports.layouts')
+@extends('layout.layouts')
 
 @section('title','')
 

@@ -25,6 +25,14 @@ class PagesController extends Controller {
 
     }
 
+    /**
+     * /admin/pages/7
+     * get
+     *
+     * @param $id
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show($id)
     {
         $page = Page::find($id);

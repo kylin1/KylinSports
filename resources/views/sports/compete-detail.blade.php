@@ -1,4 +1,4 @@
-@extends('sports.layouts')
+@extends('layout.layouts')
 
 @section('title','compete-detail')
 <!-- 日期选择 -->

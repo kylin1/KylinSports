@@ -1,6 +1,6 @@
-@extends('sports.layouts')
+@extends('layout.layouts')
 
-@section('title','sport2')
+@section('title','sport new')
 
 
 @section('style')
