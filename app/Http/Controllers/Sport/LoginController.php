@@ -11,11 +11,17 @@ namespace App\Http\Controllers\Sport;
 use App\Http\Controllers\Controller;
 use App\Page;
 use App\Today;
+use Illuminate\Http\Request;
 
 class TodayController extends Controller{
 
 
-    public function show($id)
+    public function login(Request $request)
+    {
+
+    }
+
+    public function register(Request $request)
     {
 
     }

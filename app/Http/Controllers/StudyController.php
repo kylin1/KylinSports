@@ -1,28 +1,22 @@
-<?php namespace App\Http\Controllers\Admin;
+<?php
 
-use App\Http\Requests;
+namespace App\Http\Controllers\Admin;
+
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
-
-use App\Page;
 
 use Illuminate\Support\Facades\Redirect,
     Illuminate\Support\Facades\Input,
     Illuminate\Support\Facades\Auth;
 
-use App\Comment;
+use App\Page;
 
 class PagesController extends Controller {
 
-    public function storeCom()
-    {
-        if (Comment::create(Input::all())) {
-            return Redirect::back();
-        } else {
-            return Redirect::back()->withInput()->withErrors('评论发表失败！');
-        }
 
+    public function index()
+    {
+        return view('AdminHome')->withPages(Page::all());
     }
 
     /**
@@ -41,10 +35,6 @@ class PagesController extends Controller {
         ]);
     }
 
-    public function index()
-    {
-        return view('AdminHome')->withPages(Page::all());
-    }
 
     /**
      * Show the form for creating a new resource.

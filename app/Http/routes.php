@@ -21,22 +21,17 @@ Route::get('social', 'Sport\PageController@social');
 Route::get('user', 'Sport\PageController@user');
 
 
-
-// home page
-
 // restful控制器
 Route::group(['prefix' => 'admin', 'middleware' => ['web'],'namespace' => 'Admin'], function()
 {
-    Route::get('article/{id}','PagesController@show');
-
-    Route::post('comment/store', 'PagesController@storeCom');
-
-    Route::get('/', 'PagesController@index');
-
     Route::resource('pages', 'PagesController');
 });
 
 
+Route::group(['middleware' => ['web']], function()
+{
+    Route::resource('data', 'DataController');
+});
 
 
 

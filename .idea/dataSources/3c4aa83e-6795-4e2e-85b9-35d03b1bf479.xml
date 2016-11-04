@@ -28,15 +28,15 @@
     <column id="13" parent="2" name="content">
       <data-type>TEXT(0,-1)|12</data-type>
     </column>
-    <column id="14" parent="2" name="created_at">
-      <data-type>TEXT(0,-1)|12</data-type>
-    </column>
-    <column id="15" parent="2" name="updated_at">
-      <data-type>TEXT(0,-1)|12</data-type>
-    </column>
-    <column id="16" parent="2" name="page_id">
+    <column id="14" parent="2" name="page_id">
       <mandatory>1</mandatory>
       <data-type>INTEGER(0,-1)|4</data-type>
+    </column>
+    <column id="15" parent="2" name="created_at">
+      <data-type>TEXT(0,-1)|12</data-type>
+    </column>
+    <column id="16" parent="2" name="updated_at">
+      <data-type>TEXT(0,-1)|12</data-type>
     </column>
     <key id="17" parent="2">
       <columns>id</columns>
