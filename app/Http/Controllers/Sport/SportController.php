@@ -54,38 +54,5 @@ class SportController extends Controller{
 
     }
 
-    //2.睡眠统计：
-    /**
-     * 睡眠柱状图（每一天、每一天睡眠总时间）
-     * @param $id
-     */
-    public function sleepBar($id){
-
-    }
-
-    /**
-     * 详细睡眠table：（日期、入睡时间、起床时间、时长）+ 本周平均时间
-     * @param $id
-     */
-    public function sleepDetail($id){
-
-    }
-
-    //3.健康数据
-    /**
-     * 体重折线图（每一月、每一月体重）+ 分析结果
-     * @param $id
-     */
-    public function weightLine($id){
-
-    }
-
-    /**
-     * 体脂含量折线图（每一月、每一月体脂量）+ 分析结果
-     * @param $id
-     */
-    public function fatRateLine($id){
-
-    }
 
 }

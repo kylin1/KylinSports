@@ -123,7 +123,7 @@ class PagesController extends Controller {
     /**
      * Remove the specified resource from storage.
      *
-     * /admin/pages/7
+     * /admin/pages/8676675
      * delete
      *
      * @param  int  $id

@@ -195,24 +195,18 @@ CREATE TABLE `post` (
   `createdAt` datetime NOT NULL,
   `content` text NOT NULL,
 
-  PRIMARY KEY (`id`)
+  -- 发表动态的用户id
+  `userid` int(11) NOT NULL,
+
+  PRIMARY KEY (`id`),
+
+  CONSTRAINT `post_ibfk_1` FOREIGN KEY (`userid`)
+  REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
   -- 1-4多对多 用户-发的动态表
 DROP TABLE IF EXISTS `post_user`;
-CREATE TABLE `post_user` (
-  -- 用户ID——postID
-  `userid` int(11) NOT NULL,
-  `postid` int(11) NOT NULL,
 
-  PRIMARY KEY (`userid`,`postid`),
-
-  CONSTRAINT `post_user_ibfk_1` FOREIGN KEY (`userid`)
-  REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `post_user_ibfk_2` FOREIGN KEY (`postid`)
-  REFERENCES `post` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 
   -- 1-1好友关系表

@@ -7,7 +7,7 @@
  * Time: 21:01
  */
 
-namespace App\Http\Controllers\Sport;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Today;

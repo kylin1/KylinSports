@@ -10,6 +10,6 @@ namespace App\Http\Controllers\Sport;
 
 use App\Http\Controllers\Controller;
 
-class FriendController extends Controller{
+class UserController extends Controller{
 
 }

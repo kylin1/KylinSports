@@ -92,4 +92,20 @@ class CompeteController extends Controller{
 
     }
 
+    public function withdraw($CmptID, $userID){
+
+    }
+
+    public function myOwnCmpt($userID){
+
+    }
+
+    public function myInCmpt($userID){
+
+    }
+
+    public function history($userID){
+
+    }
+
 }

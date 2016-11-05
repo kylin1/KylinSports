@@ -13,7 +13,7 @@ use App\Page;
 use App\Today;
 use Illuminate\Http\Request;
 
-class TodayController extends Controller{
+class LoginController extends Controller{
 
 
     public function login(Request $request)
