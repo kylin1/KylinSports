@@ -6,7 +6,7 @@
  * Time: 08:47
  */
 
-namespace App\Http\Controllers\Sport;
+namespace App\Http\Controllers\Compete;
 
 use App\Http\Controllers\Controller;
 

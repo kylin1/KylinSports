@@ -21,6 +21,7 @@ class PagesController extends Controller {
 
     /**
      * /admin/pages/7
+     * Route::get('article/{id}','PagesController@show');
      * get
      *
      * @param $id

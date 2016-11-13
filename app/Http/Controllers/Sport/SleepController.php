@@ -6,7 +6,7 @@
  * Time: 08:48
  */
 
-namespace App\Http\Controllers\Social;
+namespace App\Http\Controllers\Sport;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;

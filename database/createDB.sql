@@ -204,11 +204,6 @@ CREATE TABLE `post` (
   REFERENCES `user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
-  -- 1-4多对多 用户-发的动态表
-DROP TABLE IF EXISTS `post_user`;
-
-
-
   -- 1-1好友关系表
 DROP TABLE IF EXISTS `user_user`;
 CREATE TABLE `user_user` (

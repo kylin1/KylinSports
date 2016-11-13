@@ -27,10 +27,27 @@ Route::group(['prefix' => 'admin', 'middleware' => ['web'],'namespace' => 'Admin
     Route::resource('pages', 'PagesController');
 });
 
+//匹配两个参数 url = http://localhost:8888/user/88123/name
+Route::get('user/{id}/{name}', function($id, $name){
+    return  'check user id = ' . $id . ' name =' . $name;
+})->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
 
+
+//restful注入数据接口
 Route::group(['middleware' => ['web']], function()
 {
-    Route::resource('data', 'DataController');
+    //注⼊每⽇数据
+    Route::post('data/users/{uid}/dailydata','Sport\DataController@newDailyData');
+
+    //获取每⽇数据
+    Route::get('data/users/{uid}/dailydata','Sport\DataController@getDailyData');
+
+    //注⼊每⼩时数据
+    Route::post('data/users/{uid}/hourdata','Sport\DataController@newHourlyData');
+
+    //获取⼩时数据
+    Route::get('data/users/{uid}/hourdata','Sport\DataController@getHourlyData');
+
 });
 
 
