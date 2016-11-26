@@ -27,7 +27,7 @@ class DataController extends Controller {
 
         //读取主键信息
         $dayData->userId = $uid;
-        $dayData->date = $this->getToday();
+        $dayData->date = Input::get('date');
 
         //读取post参数
         $dayData->calories = Input::get('calories');
@@ -37,8 +37,6 @@ class DataController extends Controller {
         $dayData->heartrate = Input::get('heartrate');
         $dayData->sleepAt = Input::get('sleepAt');
         $dayData->wakeAt = Input::get('wakeAt');
-        $dayData->total_minutes = Input::get('total_minutes');
-
         $dayData->total_minutes = Input::get('total_minutes');
 
         //存入数据库
@@ -56,7 +54,7 @@ class DataController extends Controller {
 
         //读取主键信息
         $hourData->userId = $uid;
-        $hourData->date = $this->getToday();
+        $hourData->date = Input::get('date');
         $hourData->hour = Input::get('hour');
 
 

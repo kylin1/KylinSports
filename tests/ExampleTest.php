@@ -15,7 +15,30 @@ class ExampleTest extends TestCase
     public function testBasicExample()
 
     {
-        $data = [   'hour' => 1,
+        $this->post_daily_data();
+    }
+
+
+
+    private function post_daily_data(){
+        $data = [
+            'date' => '2016-11-26',
+            'calories' => 100,
+            'meters' => 500,
+            'steps' => 1500,
+            'minutes' => 60,
+            'heartrate' => 80,
+            'sleepAt' => 80,
+            'wakeAt' => 80,
+            'total_minutes' => 80,
+        ];
+        $this->post('http://localhost:8888/data/users/2/dailydata',$data);
+    }
+
+    private function post_hourly_data(){
+        $data = [
+            'date' => '2016-11-26',
+            'hour' => 1,
             'calories' => 100,
             'meters' => 500,
             'steps' => 1500,
@@ -25,7 +48,7 @@ class ExampleTest extends TestCase
         $this->post('http://localhost:8888/data/users/2/hourdata',$data);
     }
 
-    public function post_daily_data(){
+    private function do_post(){
         $postdata = $data = [   'hour' => 1,
             'calories' => 100,
             'meters' => 500,
