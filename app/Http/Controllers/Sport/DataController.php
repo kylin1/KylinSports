@@ -65,7 +65,6 @@ class DataController extends Controller {
         $hourData->minutes = Input::get('minutes');
         $hourData->heartrate = Input::get('heartrate');
 
-        echo $uid .Input::get('calories');
         //存入数据库
         $hourData->save();
     }
