@@ -1,6 +1,7 @@
 <?php
 
 use App\MyUser;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class UserTableSeeder extends Seeder
@@ -12,21 +13,23 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('user')->delete();
+//        DB::table('users')->delete();
 
         for ($i = 0; $i < 100; $i++) {
-            MyUser::create([
-                'username' => 'user' . $i,
+            User::create([
+                'name' => 'user' . $i,
+                'email' => '1885678' . $i . '@163.com',
                 'password' => 'pass' . $i,
-                'realname' => 'name' . $i,
+
                 'nickname' => 'nickname' . $i,
+                'birthday' => strtotime('now'),
+
                 'sex' => '男',
 
-                'birthday' => strtotime('now'),
                 'hobby' => '游泳,跑步',
                 'introduction' => '个人简介',
 
-                'sportrant' => '3',
+                'sportrank' => '3',
                 'steptarget' => '10000',
                 'distancetarget' => '3000',
                 'energytarget' => '5000',

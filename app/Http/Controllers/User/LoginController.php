@@ -16,11 +16,17 @@ use Illuminate\Http\Request;
 class LoginController extends Controller{
 
 
+    /**
+     * @param Request $request
+     */
     public function login(Request $request)
     {
 
     }
 
+    /**
+     * @param Request $request
+     */
     public function register(Request $request)
     {
 
