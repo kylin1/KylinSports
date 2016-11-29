@@ -6,9 +6,7 @@
  * Time: 08:47
  */
 
-namespace App\Http\Controllers\Compete;
-
-use App\Http\Controllers\Controller;
+namespace App\Http\Controllers;
 
 class CompeteController extends Controller{
 
@@ -20,7 +18,7 @@ class CompeteController extends Controller{
 
     public function index()
     {
-
+        return view('sports.compete');
     }
 
     /**

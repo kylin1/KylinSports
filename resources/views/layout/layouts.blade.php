@@ -52,7 +52,7 @@
             <ul class="nav">
 
                 <li>
-                    <a href= {{ url('/today') }} >
+                    <a href= {{ url('/home') }} >
                         <i class="material-icons">today</i>
                         <p>今日</p>
                     </a>

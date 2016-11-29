@@ -10,12 +10,6 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
-//匹配两个参数 url = http://localhost:8888/laravel/public/user/88123/name
-Route::get('user/{id}/{name}', function($id, $name){
-    return  'check user id = ' . $id . ' name =' . $name;
-})->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
-
 //restful注入数据接口
 Route::group(['middleware' => ['web']], function()
 {
@@ -31,11 +25,12 @@ Route::group(['middleware' => ['web']], function()
 });
 
 //应用路由
-
-
-
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
     Route::get('/', 'HomeController@index');
+    //各个主界面
     Route::get('/home', 'HomeController@index');
+    Route::get('/sport', 'SportController@index');
+    Route::get('/compete', 'CompeteController@index');
+    Route::get('/social', 'SocialController@index');
 });

@@ -318,12 +318,12 @@
 
     <script>
         function drawChart() {
-            var dataStepsBar={!! $dataStepsBar !!};
-            var dataRunLineChart={!! $dataRunLineChart !!};
-            var dataWeightChart={!! $dataWeightChart !!};
-            var dataFatChart={!! $dataFatChart !!};
-            var dataHeartChart={!! $dataHeartChart !!};
-            var dataSleepBar={!! $dataSleepBar !!};
+            var dataStepsBar ={!! $dataStepsBar !!};
+            var dataRunLineChart ={!! $dataRunLineChart !!};
+            var dataHeartChart ={!! $dataHeartChart !!};
+            var dataWeightChart ={!! $dataWeightChart !!};
+            var dataFatChart ={!! $dataFatChart !!};
+            var dataSleepBar ={!! $dataSleepBar !!};
 
             createLineChart('runLineChart',dataRunLineChart,'run');
             createLineChart('weightChart',dataWeightChart,'weight');
@@ -349,7 +349,7 @@
                 // 显示对应部分的内容
                 $('div.container-sharing > section').hide();
 
-                // 更新图表信息
+                //更新图表信息
                 drawChart();
                 var target = '#' + this.getAttribute('my-target');
                 $(target).show();

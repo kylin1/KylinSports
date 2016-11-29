@@ -6,16 +6,41 @@
  * Time: 08:47
  */
 
-namespace App\Http\Controllers\Sport;
+namespace App\Http\Controllers;
 
-use App\DayData;
-use App\HourData;
-use App\Http\Controllers\Controller;
-use App\Util;
+use App\Http\Controllers\Sport\HealthController;
+use App\Http\Controllers\Sport\SleepController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class SportController extends Controller
 {
+
+    public function index(){
+        //获取登录的用户信息
+        $thisUser = Auth::user();
+        $userid = $thisUser->id;
+
+        $dataStepsBar = $this->stepBar($userid);
+        $dataRunLineChart = $this->runHistory($userid);
+        $dataHeartChart = $this->hearLine($userid);
+
+        $weightController = new HealthController;
+        $dataWeightChart = $weightController->weightLine($userid);
+        $dataFatChart = $weightController->fatRateLine($userid);
+
+        $sleepController = new SleepController;
+        $dataSleepBar = $sleepController->sleepBar($userid);
+
+        return view('sports.sport',[
+            'dataStepsBar' => $dataStepsBar,
+            'dataRunLineChart' => $dataRunLineChart,
+            'dataHeartChart' => $dataHeartChart,
+            'dataWeightChart' => $dataWeightChart,
+            'dataFatChart' => $dataFatChart,
+            'dataSleepBar' => $dataSleepBar,
+        ]);
+    }
 
     //1.运动统计
     /**
@@ -29,15 +54,15 @@ class SportController extends Controller
         $series = array();
 
         $stepInfo = DB::select('select `date`,`steps` from daily_data 
-where userid == ' . $id . ' order by `date` ');
+where userid == ' . $id . ' order by `date` desc limit 10');
 
         foreach ($stepInfo as $oneInfo) {
             $stepOne = $oneInfo->steps;
             $labels[] = $oneInfo->date;
-            $series[] = $stepOne;
+            $series[] = (int)$stepOne;
         }
 
-        $arr = ['labels' => $labels, 'series' => $series];
+        $arr = ['labels' => $labels, 'series' => [$series]];
         $dataStepsBar = json_encode($arr);
         return $dataStepsBar;
     }
@@ -53,15 +78,15 @@ where userid == ' . $id . ' order by `date` ');
         $series = array();
 
         $stepInfo = DB::select('select `date`,`heartrate` from daily_data 
-where userid == ' . $id . ' order by `date` ');
+where userid == ' . $id . ' order by `date` desc limit 10');
 
         foreach ($stepInfo as $oneInfo) {
             $stepOne = $oneInfo->heartrate;
             $labels[] = $oneInfo->date;
-            $series[] = $stepOne;
+            $series[] = (int)$stepOne;
         }
 
-        $arr = ['labels' => $labels, 'series' => $series];
+        $arr = ['labels' => $labels, 'series' => [$series]];
         $heartLineChart = json_encode($arr);
         return $heartLineChart;
     }
@@ -77,17 +102,17 @@ where userid == ' . $id . ' order by `date` ');
         $series = array();
 
         $stepInfo = DB::select('select `date`,`meters` from daily_data 
-where userid == ' . $id . ' order by `date` ');
+where userid == ' . $id . ' order by `date` desc limit 10');
 
         foreach ($stepInfo as $oneInfo) {
             $stepOne = $oneInfo->meters;
             $labels[] = $oneInfo->date;
-            $series[] = $stepOne;
+            $series[] = (int)$stepOne;
         }
 
-        $arr = ['labels' => $labels, 'series' => $series];
-        $heartLineChart = json_encode($arr);
-        return $heartLineChart;
+        $arr = ['labels' => $labels, 'series' => [$series]];
+        $runHistory = json_encode($arr);
+        return $runHistory;
     }
 
 

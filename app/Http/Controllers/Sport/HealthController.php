@@ -29,15 +29,15 @@ class HealthController extends Controller
         $series = array();
 
         $weightInfo = DB::select('select `date`,`weight` from weight 
-where userid == ' . $id . ' order by `date` ');
+where userid == ' . $id . ' order by `date` desc limit 10');
         foreach ($weightInfo as $oneInfo) {
             $date = date('Y-m-d', $oneInfo->date);
             $weight = $oneInfo->weight;
             $labels[] = $date;
-            $series[] = $weight;
+            $series[] = (int)$weight;
 
         }
-        $arr = ['labels' => $labels, 'series' => $series];
+        $arr = ['labels' => $labels, 'series' => [$series]];
         $dataWeightChart = json_encode($arr);
 
         return ($dataWeightChart);
@@ -56,14 +56,14 @@ where userid == ' . $id . ' order by `date` ');
         $series = array();
 
         $weightInfo = DB::select('select `date`,`fatrate` from weight 
-where userid == ' . $id . ' order by `date` ');
+where userid == ' . $id . ' order by `date` desc limit 10');
         foreach ($weightInfo as $oneInfo) {
             $date = date('Y-m-d', $oneInfo->date);
             $weight = $oneInfo->fatrate;
             $labels[] = $date;
-            $series[] = $weight;
+            $series[] = (int)$weight;
         }
-        $arr = ['labels' => $labels, 'series' => $series];
+        $arr = ['labels' => $labels, 'series' => [$series]];
         $dataWeightChart = json_encode($arr);
 
         return ($dataWeightChart);

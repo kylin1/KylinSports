@@ -10,6 +10,7 @@ namespace App\Http\Controllers\Sport;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SleepController extends Controller{
 
@@ -17,17 +18,25 @@ class SleepController extends Controller{
     /**
      * 睡眠柱状图（每一天、每一天睡眠总时间）
      * @param $id
+     * @return string
      */
     public function sleepBar($id){
 
-        $labels = ['3月', '4月', '5月', '6月', '7月',
-            '8月', '9月', '10月', '11月', '12月'];
-        $series = [
-            [18, 18, 18, 19, 19,
-                19, 19, 20, 22, 20, 19, 18]
-        ];
-        $arr = ['labels' => $labels, 'series' => $series];
-        $dataSleepBar = json_encode($arr);
+        $labels = array();
+        $series = array();
+
+        $sleepInfo = DB::select('select `date`,`total_minutes` from daily_data 
+where userid == ' . $id . ' order by `date` desc limit 10');
+
+        foreach ($sleepInfo as $oneInfo) {
+            $sleepOne = $oneInfo->total_minutes;
+            $labels[] = $oneInfo->date;
+            $series[] = (int)$sleepOne;
+        }
+
+        $arr = ['labels' => $labels, 'series' => [$series]];
+        $runHistory = json_encode($arr);
+        return $runHistory;
     }
 
     /**
