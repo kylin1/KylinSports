@@ -14,4 +14,5 @@ class GroupMember extends Model
     // 指定表名
     protected $table = 'group_user';
 
+    protected $guarded = array();
 }

@@ -14,4 +14,5 @@ class FriendShip extends Model
     // 指定表名
     protected $table = 'user_user';
 
+    protected $guarded = array();
 }

@@ -8,7 +8,7 @@
  */
 namespace App;
 
-class Today {
+class Util {
 
     public static function getToday(){
         return '2016-11-26';
