@@ -10,7 +10,7 @@ class PageTableSeeder extends Seeder {
         DB::table('pages')->delete();
 
         for ($i=0; $i < 10; $i++) {
-            Page::create([
+            CompeteUserTableSeeder::create([
                 'title'   => 'Title '.$i,
                 'slug'    => 'first-page',
                 'body'    => 'Body '.$i,

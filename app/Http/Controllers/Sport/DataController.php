@@ -44,9 +44,7 @@ class DataController extends Controller {
     }
 
     public function getDailyData($uid){
-        $date = Input::get('date');
-        $dayData = DayData::find($uid,$date);
-        return $dayData;
+
     }
 
     public function newHourlyData(Request $request,$uid){
@@ -69,8 +67,8 @@ class DataController extends Controller {
         $hourData->save();
     }
 
-    public function getHourlyData($uid){
-        return "getHourlyData uid=" .$uid;
+    public function getHourlyData($uid,$hour){
+
     }
 
 

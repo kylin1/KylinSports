@@ -8,8 +8,10 @@
  */
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+class Today {
 
-class Today extends Model {
+    public static function getToday(){
+        return '2016-11-26';
+    }
 
 }

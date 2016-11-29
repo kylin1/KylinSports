@@ -19,7 +19,13 @@ class HealthController extends Controller{
      * @param $id
      */
     public function weightLine($id){
-
+        $labels = ['10-01', '10-02', '10-03', '10-04', '10-05',
+            '10-06', '10-07', '10-08', '10-09', '10-10', '10-11', '10-12'];
+        $series = [
+            [0, 3, 3, 5, 0, 7, 4, 0, 8.5, 0, 6, 3]
+        ];
+        $arr = ['labels' => $labels, 'series' => $series];
+        $dataWeightChart = json_encode($arr);
     }
 
     /**
@@ -28,6 +34,13 @@ class HealthController extends Controller{
      */
     public function fatRateLine($id){
 
+        $labels = ['10-01', '10-02', '10-03', '10-04', '10-05',
+            '10-06', '10-07', '10-08', '10-09', '10-10', '10-11', '10-12'];
+        $series = [
+            [70, 80, 80, 90, 95, 70, 80, 160, 70, 80, 90, 180]
+        ];
+        $arr = ['labels' => $labels, 'series' => $series];
+        $dataFatChart = json_encode($arr);
     }
 
 }

@@ -289,9 +289,9 @@ class StudentController extends Controller {
         // 查询构造器在ORM中的使用
 //        $students = Student::get();
 
-//        $students = Student::where('id', 1006)
-//        ->first();
-//        dd($students);
+        $students = Student::where('id', 1006)
+            ->first();
+        dd($students);
 
         // chunk 分批次查询
 //        echo '<pre>';

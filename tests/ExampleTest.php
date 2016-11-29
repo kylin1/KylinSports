@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Sport\SportController;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
@@ -15,7 +16,10 @@ class ExampleTest extends TestCase
     public function testBasicExample()
     {
 //        $this->post_daily();
-        $this->post_hour();
+//        $this->post_hour();
+
+        $controller = new SportController();
+        $controller->todayInfo('2016-11-23',1);
     }
 
 

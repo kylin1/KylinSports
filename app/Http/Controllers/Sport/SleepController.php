@@ -20,6 +20,14 @@ class SleepController extends Controller{
      */
     public function sleepBar($id){
 
+        $labels = ['3月', '4月', '5月', '6月', '7月',
+            '8月', '9月', '10月', '11月', '12月'];
+        $series = [
+            [18, 18, 18, 19, 19,
+                19, 19, 20, 22, 20, 19, 18]
+        ];
+        $arr = ['labels' => $labels, 'series' => $series];
+        $dataSleepBar = json_encode($arr);
     }
 
     /**
