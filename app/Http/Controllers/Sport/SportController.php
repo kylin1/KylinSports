@@ -12,6 +12,7 @@ use App\DayData;
 use App\HourData;
 use App\Http\Controllers\Controller;
 use App\Today;
+use Illuminate\Support\Facades\DB;
 
 class SportController extends Controller
 {
@@ -49,7 +50,23 @@ class SportController extends Controller
             $step = $step + $data->steps;
         }
 
-        echo $distance,' ',$step,' ',$energy;
+    }
+
+    public function getTodayStep($userid){
+        //今天到此刻的数据累加
+        $date = Today::getToday();
+        $endHour = 18;
+
+        $step = 0;
+
+        for ($hour = 1; $hour <= $endHour; $hour++) {
+            $data = HourData::where(['userid' => $userid,
+                'date' => $date,
+                'hour' => $hour])->first();
+            $step = $step + $data->steps;
+        }
+
+        return $step;
     }
 
     /**
@@ -68,46 +85,73 @@ class SportController extends Controller
     /**
      * 步数柱状图（每一天、每一天总步数）+ 分析结果
      * @param $id
+     * @return string
      */
     public function stepBar($id)
     {
-        $labels = ['10-01', '10-02', '10-03', '10-04', '10-05',
-            '10-06', '10-07', '10-08', '10-09', '10-10', '10-11', '10-12'];
-        $series =
-            [[0, 0, 3200, 7800, 5503, 4053, 3206, 4034, 5068, 6100, 7506, 8905]];
-        $arr = ['labels' => $labels, 'series' => $series];
+        $labels = array();
+        $series = array();
 
+        $stepInfo = DB::select('select `date`,`steps` from daily_data 
+where userid == ' . $id . ' order by `date` ');
+
+        foreach ($stepInfo as $oneInfo) {
+            $stepOne = $oneInfo->steps;
+            $labels[] = $oneInfo->date;
+            $series[] = $stepOne;
+        }
+
+        $arr = ['labels' => $labels, 'series' => $series];
         $dataStepsBar = json_encode($arr);
+        return $dataStepsBar;
     }
 
     /**
      * 心率折线图（每一天、每一天平均心率）+ 分析结果
      * @param $id
+     * @return string
      */
     public function hearLine($id)
     {
-        $labels = ['3月', '4月', '5月', '6月', '7月',
-            '8月', '9月', '10月', '11月', '12月'];
-        $series = [
-            [150, 151, 152, 151, 153,
-                154, 155, 156, 160, 158, 156, 156]
-        ];
+        $labels = array();
+        $series = array();
+
+        $stepInfo = DB::select('select `date`,`heartrate` from daily_data 
+where userid == ' . $id . ' order by `date` ');
+
+        foreach ($stepInfo as $oneInfo) {
+            $stepOne = $oneInfo->heartrate;
+            $labels[] = $oneInfo->date;
+            $series[] = $stepOne;
+        }
+
         $arr = ['labels' => $labels, 'series' => $series];
-        $dataHeartChart = json_encode($arr);
+        $heartLineChart = json_encode($arr);
+        return $heartLineChart;
     }
 
     /**
      * 跑步历史柱状图（每一天、每一天公里）+ 分析结果
      * @param $id
+     * @return string
      */
     public function runHistory($id)
     {
-        $labels = ['周1', '周2', '周3', '周4', '周5', '周6', '周7'];
-        $series = [
-            [6, 7, 6, 5, 6, 8, 29]
-        ];
+        $labels = array();
+        $series = array();
+
+        $stepInfo = DB::select('select `date`,`meters` from daily_data 
+where userid == ' . $id . ' order by `date` ');
+
+        foreach ($stepInfo as $oneInfo) {
+            $stepOne = $oneInfo->meters;
+            $labels[] = $oneInfo->date;
+            $series[] = $stepOne;
+        }
+
         $arr = ['labels' => $labels, 'series' => $series];
-        $dataRunLineChart = json_encode($arr);
+        $heartLineChart = json_encode($arr);
+        return $heartLineChart;
     }
 
 

@@ -11,45 +11,26 @@
 |
 */
 
-// 各个小界面
-Route::get('today', 'Sport\PageController@today');
-Route::get('sport', 'Sport\PageController@sport');
-Route::get('compete', 'Sport\PageController@compete');
-Route::get('social', 'Sport\PageController@social');
-
-// 用户界面
-Route::get('user', 'Sport\PageController@user');
-
-
-// restful控制器
-Route::group(['prefix' => 'admin', 'middleware' => ['web'],'namespace' => 'Admin'], function()
-{
-    Route::resource('pages', 'PagesController');
-});
-
-//匹配两个参数 url = http://localhost:8888/user/88123/name
+//匹配两个参数 url = http://localhost:8888/laravel/public/user/88123/name
 Route::get('user/{id}/{name}', function($id, $name){
     return  'check user id = ' . $id . ' name =' . $name;
 })->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
-
 
 //restful注入数据接口
 Route::group(['middleware' => ['web']], function()
 {
     //注⼊每⽇数据
     Route::post('data/users/{uid}/dailydata','Sport\DataController@newDailyData');
-
     //获取每⽇数据
     Route::get('data/users/{uid}/dailydata','Sport\DataController@getDailyData');
 
     //注⼊每⼩时数据
     Route::post('data/users/{uid}/hourdata','Sport\DataController@newHourlyData');
-
     //获取⼩时数据
     Route::get('data/users/{uid}/hourdata','Sport\DataController@getHourlyData');
-
 });
 
+//应用路由
 
 
 
