@@ -25,8 +25,8 @@
                         <div class="card-content">
                             <p class="category">活动时间</p>
                             <h3 class="title">
-                                {{ $today->time[0] }}<small>h</small>
-                                {{ $today->time[1] }}<small>m</small>
+                                {{ $timeHour }}<small>h</small>
+                                {{ $timeMinute }}<small>m</small>
                             </h3>
                         </div>
                         <div class="card-footer">
@@ -46,7 +46,7 @@
                         <!--图片-->
                         <div class="card-content">
                             <p class="category">行走步数</p>
-                            <h3 class="title">{{ $today->step }}</h3>
+                            <h3 class="title">{{ $step }}</h3>
                         </div>
                         <!--下标-->
                         <div class="card-footer">
@@ -64,7 +64,7 @@
                         </div>
                         <div class="card-content">
                             <p class="category">运动距离</p>
-                            <h3 class="title">{{ $today->distance }}<small>km</small></h3>
+                            <h3 class="title">{{ $distance }}<small>m</small></h3>
                         </div>
                         <div class="card-footer">
                             <div class="stats">
@@ -81,7 +81,7 @@
                         </div>
                         <div class="card-content">
                             <p class="category">消耗能量</p>
-                            <h3 class="title">{{ $today->energy }}<small>卡</small></h3>
+                            <h3 class="title">{{ $energy }}<small>卡</small></h3>
                         </div>
                         <div class="card-footer">
                             <div class="stats">
@@ -110,7 +110,7 @@
                             </thead>
                             <tbody>
 
-                            @foreach($today->friendList as $friend=>$point)
+                            @foreach($friendList as $friend=>$point)
                                 <tr>
                                     <td>{{ $friend }}</td>
                                     <td>{{ $point[0] }}</td>

@@ -10,7 +10,7 @@ namespace App\Http\Controllers\Social;
 
 use App\FriendShip;
 use App\Http\Controllers\Controller;
-use App\MyUser;
+use App\User;
 use App\Post;
 
 class FriendController extends Controller{
@@ -65,7 +65,7 @@ class FriendController extends Controller{
      * @param $userID
      */
     public function show($userID){
-        $friend = MyUser::where('id',$userID);
+        $friend = User::where('id',$userID);
         if($friend->first()){
             return $friend->first();
         }
