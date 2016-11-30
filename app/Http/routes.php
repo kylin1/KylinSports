@@ -33,4 +33,12 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/sport', 'SportController@index');
     Route::get('/compete', 'CompeteController@index');
     Route::get('/social', 'SocialController@index');
+
+    //Restful
+    Route::resource('/competition', 'CompeteController');
+    Route::resource('/user', 'UserController');
+
+    //个人竞赛管理
+    Route::get('/my-competition', 'CompeteController@myCompete');
+
 });

@@ -1,16 +1,11 @@
 @extends('layout.layouts')
 
 @section('title','compete-detail')
-<!-- 日期选择 -->
-<link rel="stylesheet" href= {{ asset('datepicker/css/datepicker.css') }}>
-@section('style')
-
-@stop
 
 @section('top-left-menu')
 <ul class="nav mynav-top navbar-nav navbar-left">
     <li>
-        <a href="compete.html">
+        <a  href="{{ url('/competition') }}">
             返回
         </a>
     </li>
@@ -103,6 +98,7 @@
             <!--成员信息-->
             <div class="row">
                 <div class="col-md-10">
+
                     <!--成员一个-->
                     <div class="card card-close">
                         <div class="card-content">
@@ -125,48 +121,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card card-close">
-                        <div class="card-content">
-                            <div class="row">
-                                <!--头像区域-->
-                                <div class="col-md-1">
-                                    <i class="material-icons">person_pin</i>
-                                </div>
-
-                                <!--步数信息-->
-                                <div class="col-md-8">
-                                    <h4>Lois828</h4>
-                                    <div class="progress progress-line-primary">
-                                        <div class="progress-bar" role="progressbar"
-                                             aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
-                                            <span>10.8公里</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card card-close">
-                        <div class="card-content">
-                            <div class="row">
-                                <!--头像区域-->
-                                <div class="col-md-1">
-                                    <i class="material-icons">person_pin</i>
-                                </div>
-
-                                <!--步数信息-->
-                                <div class="col-md-8">
-                                    <h4>Lois828</h4>
-                                    <div class="progress progress-line-primary">
-                                        <div class="progress-bar" role="progressbar"
-                                             aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
-                                            <span>7.2公里</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div>
@@ -176,8 +130,3 @@
     </div>
 @stop
 
-
-@section('javascript')
-    <!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
-    <script src= {{ asset('datepicker/js/bootstrap-datepicker.js') }}></script>
-@stop
