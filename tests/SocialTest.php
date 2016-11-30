@@ -1,6 +1,6 @@
 <?php
 
-use App\Facades\TestClass;
+use App\Facades\UserInfoClass;
 use App\Http\Controllers\Social\FriendController;
 use App\Http\Controllers\Social\GroupController;
 
@@ -9,7 +9,7 @@ class SocialTest extends TestCase
 
     public function test()
     {
-        $array = TestClass::friendList(1);
+        $array = UserInfoClass::friendList(1);
         print sizeof($array)."\n";
         foreach ($array as $oneFriend) {
             print $oneFriend->id . "\n";

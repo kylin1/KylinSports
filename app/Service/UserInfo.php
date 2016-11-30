@@ -5,11 +5,11 @@ namespace App\Facades;
 use App\FriendShip;
 use App\User;
 
-class Test
+class UserInfo
 {
-    public function doSomething()
+    public function userTest()
     {
-        return 'This is TestClass method doSomething';
+        return 'This is UserInfo userTest() method';
     }
 
     /**
@@ -31,5 +31,17 @@ class Test
             $resultList[] = $friend;
         }
         return $resultList;
+    }
+
+    /**
+     * 返回指定⽤户的权限信息
+     *
+     * @param $userID
+     * @return array
+     */
+    public function userLevel($userID){
+        $user = User::where('id',$userID)->first();
+        $level = $user->sportrank;
+        return $level;
     }
 }

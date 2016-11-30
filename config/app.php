@@ -158,7 +158,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        App\Providers\TestServiceProvider::class,
+        App\Providers\UserServiceProvider::class,
         App\Providers\FooProvider::class,
     ],
 
@@ -207,7 +207,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         //my service
-        'TestClass' => App\Facades\TestClass::class,
+        'TestClass' => App\Facades\UserInfoClass::class,
         'Foo' => Foobar\Facades\Foo::class,
     ],
 

@@ -3,9 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\Facades\Test;
+use App\Facades\UserInfo;
 
-class TestServiceProvider extends ServiceProvider
+class UserServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -26,7 +26,7 @@ class TestServiceProvider extends ServiceProvider
     {
         $this->app->singleton('test',function(){
             //return new TestService();
-            return new Test;
+            return new UserInfo;
         });
 
     }

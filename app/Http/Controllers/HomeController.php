@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Facades\TestClass;
+use App\Facades\UserInfoClass;
 use App\HourData;
 use App\Util;
 use Illuminate\Support\Facades\Auth;
@@ -101,7 +101,7 @@ class HomeController extends Controller
     public function friendRank($userId)
     {
         //获取所有好友
-        $friendList = TestClass::friendList($userId);
+        $friendList = UserInfoClass::friendList($userId);
 
         //获取好友的步数信息
         $friendAndStep = array();
