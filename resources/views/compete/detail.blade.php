@@ -128,6 +128,7 @@
                     @endforeach
 
                 </div>
+                {!! $participants->render() !!}
             </div>
 
         </section>

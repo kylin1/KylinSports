@@ -10,7 +10,7 @@ class ServiceTest extends TestCase
     {
 
         print TestClass::doSomething();
-//        print Foo::Bar();
+        print Foo::Bar();
     }
 
 }

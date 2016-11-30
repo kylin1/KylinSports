@@ -88,6 +88,7 @@
                 @endforeach
 
             </div>
+            {!! $competeList->render() !!}
         </section>
 
     </div>

@@ -18,7 +18,7 @@ class CompeteController extends Controller
 
     public function index()
     {
-        $competeList = Competition::all();
+        $competeList = Competition::paginate(5);
 
         return view('compete.index', [
             'competeList' => $competeList,
@@ -190,7 +190,7 @@ class CompeteController extends Controller
      */
     public function myOwnCmpt($userID)
     {
-        $myOwnCmpt = Competition::where('startid', $userID)->get();
+        $myOwnCmpt = Competition::where('startid', $userID)->paginate(3);
         return $myOwnCmpt;
     }
 
@@ -240,13 +240,13 @@ class CompeteController extends Controller
      */
     private function cmptHistory($userID)
     {
-        $myOwnCmpt = Competition::where('startid', $userID)->get();
+        $myOwnCmpt = Competition::where('startid', $userID)->paginate(3);
         return $myOwnCmpt;
     }
 
     private function competeUser($competeId)
     {
-        $participants = CompeteMember::where('competeid', $competeId)->get();
+        $participants = CompeteMember::where('competeid', $competeId)->paginate(3);
         return $participants;
     }
 
