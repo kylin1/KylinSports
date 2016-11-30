@@ -1,20 +1,24 @@
 <?php
 
+use App\Facades\TestClass;
 use App\Http\Controllers\Social\FriendController;
 use App\Http\Controllers\Social\GroupController;
-use App\Http\Controllers\Social\PostController;
 
 class SocialTest extends TestCase
 {
 
     public function test()
     {
-//        $this->friendlist();
+        $array = TestClass::friendList(1);
+        print sizeof($array)."\n";
+        foreach ($array as $oneFriend) {
+            print $oneFriend->id . "\n";
+        }
 //        $this->group();
-        $this->friendPost();
+//        $this->friendPost();
     }
 
-    public function friendPost()
+    private function friendPost()
     {
         $controller = new FriendController();
         $posts = $controller->friendPost(1);
@@ -23,20 +27,10 @@ class SocialTest extends TestCase
         }
     }
 
-    public function group()
+    private function group()
     {
         $controller = new GroupController();
         $controller->deleteGroup(20, 20);
-    }
-
-    private function friendlist()
-    {
-        $controller = new FriendController();
-        $array = $controller->friendList(1);
-        print sizeof($array);
-        foreach ($array as $oneFriend) {
-            print $oneFriend->id . "\n";
-        }
     }
 
     private function show()

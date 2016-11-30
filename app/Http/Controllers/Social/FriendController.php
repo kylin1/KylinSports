@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers\Social;
 
+use App\Facades\TestClass;
 use App\FriendShip;
 use App\Http\Controllers\Controller;
 use App\User;
@@ -15,26 +16,7 @@ use App\Post;
 
 class FriendController extends Controller{
 
-    /**
-     * 返回指定⽤户的好友列表
-     *
-     * @param $userID
-     * @return array
-     */
-    public function friendList($userID){
-        //获取好友列表
-        $friendList = FriendShip::where('user1id',$userID)->get();
-        $resultList = array();
-        foreach ($friendList as $friend){
-            //得到好友的ID
-            $friendId = $friend->user2id;
 
-            //获取好友的信息
-            $friend = $this->show($friendId);
-            $resultList[] = $friend;
-        }
-        return $resultList;
-    }
 
     /**
      * 返回指定⽤户的好友的动态
@@ -45,7 +27,7 @@ class FriendController extends Controller{
     public function friendPost($id){
         $resultList = array();
 
-        $friendList = $this->friendList($id);
+        $friendList = TestClass::friendList($id);
         // 这个用户的所有好友
         foreach ($friendList as $friend){
             $friendId = $friend->id;

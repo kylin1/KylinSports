@@ -7,10 +7,10 @@ class HomeTest extends TestCase
 
     public function test()
     {
-        $this->friendList();
+        $this->testfriendList();
     }
 
-    public function friendList()
+    public function testfriendList()
     {
         $controller = new HomeController();
         $friendAndStep = $controller->friendRank(1);

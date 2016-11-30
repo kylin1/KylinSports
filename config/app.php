@@ -158,6 +158,8 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        App\Providers\TestServiceProvider::class,
+        App\Providers\FooProvider::class,
     ],
 
     /*
@@ -204,6 +206,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        //my service
+        'TestClass' => App\Facades\TestClass::class,
+        'Foo' => Foobar\Facades\Foo::class,
     ],
 
 ];

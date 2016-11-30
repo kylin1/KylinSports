@@ -8,18 +8,35 @@
 
 namespace App\Http\Controllers;
 
-class SocialController extends Controller{
+class SocialController extends Controller
+{
 
 
-    public function index(){
-        return view('social.friend');
+    public function index()
+    {
+
+        $friendPost = 1;
+        $friendList = 2;
+
+        return view('social.friend', [
+            'friendPost' => $friendPost,
+            'friendList' => $friendList,
+        ]);
     }
 
-    public function group(){
-        return view('social.group');
+    public function group()
+    {
+        $groupList = 1;
+        $myGroup = 1;
+
+        return view('social.group', [
+            'groupList' => $groupList,
+            'myGroup' => $myGroup,
+        ]);
     }
 
-    public function writePost(){
+    public function writePost()
+    {
         return view('social.new-post');
     }
 
