@@ -101,6 +101,7 @@ class CompeteController extends Controller
         $compete->startAt = $request->get('startAt');
         $compete->endAt = $request->get('endAt');
         $compete->startid = Auth::user()->id;
+        $compete->currentNum = 1;
 
         if ($compete->save()) {
             return redirect('competition');
@@ -243,6 +244,15 @@ class CompeteController extends Controller
                 'getbonus'=>0,
                 'win'=>0,
             ]);
+
+            //更新竞赛的状态
+            $compete = Competition::find($cmptId);
+            $currentNum = $compete->currentNum;
+
+            //参加人数+1
+            $compete->currentNum = $currentNum+1;
+            $compete->save();
+
             return redirect('competition');
         }
 
@@ -263,6 +273,15 @@ class CompeteController extends Controller
             'userid' => $userID, 'competeid' => $CmptID
         ]);
         $bool = $target->delete();
+
+        //更新竞赛的状态
+        $compete = Competition::find($CmptID);
+        $currentNum = $compete->currentNum;
+
+        //参加人数+1
+        $compete->currentNum = $currentNum-1;
+        $compete->save();
+
         return redirect('my-competition');
     }
 

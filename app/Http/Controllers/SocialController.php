@@ -8,7 +8,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Facades\TestClass;
+use App\Facades\UserInfoClass;
 use App\Group;
 use App\GroupMember;
 use App\Post;
@@ -27,7 +27,7 @@ class SocialController extends Controller
     {
         $userid = Auth::user()->id;
         //获取用户的好友动态与信息列表
-        $friendList = TestClass::friendList($userid);
+        $friendList = UserInfoClass::friendList($userid);
         $friendPost = $this->friendPost($friendList);
 
         return view('social.friend', [

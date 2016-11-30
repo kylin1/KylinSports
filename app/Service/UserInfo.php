@@ -18,16 +18,17 @@ class UserInfo
      * @param $userID
      * @return array
      */
-    public function friendList($userID){
+    public function friendList($userID)
+    {
         //获取好友列表
-        $friendList = FriendShip::where('user1id',$userID)->get();
+        $friendList = FriendShip::where('user1id', $userID)->get();
         $resultList = array();
-        foreach ($friendList as $friend){
+        foreach ($friendList as $friend) {
             //得到好友的ID
             $friendId = $friend->user2id;
 
             //获取好友的信息
-            $friend = User::where('id',$friendId)->first();
+            $friend = User::where('id', $friendId)->first();
             $resultList[] = $friend;
         }
         return $resultList;
@@ -39,8 +40,9 @@ class UserInfo
      * @param $userID
      * @return array
      */
-    public function userLevel($userID){
-        $user = User::where('id',$userID)->first();
+    public function userLevel($userID)
+    {
+        $user = User::where('id', $userID)->first();
         $level = $user->sportrank;
         return $level;
     }

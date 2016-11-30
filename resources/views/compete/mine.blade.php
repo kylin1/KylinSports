@@ -64,14 +64,14 @@
                                         <th>人数</th>
                                         <th>类型</th>
                                         <th>奖励</th>
-                                        <th>距离开始时间</th>
+                                        <th>开始时间</th>
                                         </thead>
                                         <tbody>
                                         <tr>
                                             <td>{{ $myOwn->currentNum }}/{{ $myOwn->number }}</td>
                                             <td>{{ $myOwn->type }}</td>
                                             <td>{{ $myOwn->bonus }}</td>
-                                            <td>3天 2小时</td>
+                                            <td>{{ $myOwn->startAt }}</td>
                                         </tr>
                                         </tbody>
                                     </table>

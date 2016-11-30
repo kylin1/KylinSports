@@ -71,11 +71,11 @@
                                     <th>人数</th>
                                     <th>类型</th>
                                     <th>奖励</th>
-                                    <th>距离开始时间</th>
+                                    <th>开始时间</th>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>{{ $compete->number }}</td>
+                                        <td>{{ $compete->currentNum }}/{{ $compete->number }}</td>
                                         <td>{{ $compete->type }}</td>
                                         <td>{{ $compete->bonus }}</td>
                                         <td>{{ $compete->endAt }}</td>

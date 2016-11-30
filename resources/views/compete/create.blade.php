@@ -50,36 +50,31 @@
                             <form action="{{ url('competition') }}" method="POST">
                             {!! csrf_field() !!}
 
-                            <!--类别-->
                                 <div class="row">
-                                    <label class="col-sm-1 control-label">类别</label>
-
+                                    <label class="col-sm-1 control-label">名称</label>
                                     <div class="col-sm-2">
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="type">
-                                                个人赛
-                                            </label>
-                                        </div>
+                                        <input type="text" name="name">
                                     </div>
 
+                                </div>
+
+                                <div class="row">
+                                    <label class="col-sm-1 control-label">奖金</label>
                                     <div class="col-sm-2">
-                                        <div class="radio">
-                                            <label>
-                                                <input type="radio" name="type">
-                                                团体赛
-                                            </label>
+                                        <input type="text" name="bonus">
+                                    </div>
+
+                                    <div class="col-sm-1 col-sm-offset-1">
+                                        <div style="display: inline-block">
+                                            <label class="control-label" for="dpd2">人数 </label>
                                         </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <input type="text" name="number">
                                     </div>
                                 </div>
 
-                                <!--目标-->
-                                <div class="row">
-                                    <label class="col-sm-1 control-label">目标</label>
-                                    <div class="col-sm-2">
-                                        <input type="text" name="target">
-                                    </div>
-                                </div>
+
 
                                 <!-- 起止时间 -->
                                 <div class="row">
@@ -110,32 +105,53 @@
 
                                 </div>
 
-                                {{--<!--竞赛介绍行-->--}}
-                                {{--<div class="row">--}}
-                                {{--<div class="col-md-12">--}}
-                                {{--<div class="form-group">--}}
-                                {{--<div class="form-group label-floating">--}}
-                                {{--<label class="control-label"> 竞赛介绍</label>--}}
-                                {{--<textarea class="form-control" rows="5" name="target"></textarea>--}}
-                                {{--</div>--}}
-                                {{--</div>--}}
-                                {{--</div>--}}
-                                {{--</div>--}}
 
-                                <input type="text" name="name" class="form-control" required="required"
-                                       placeholder="竞赛名称">
 
-                                <input type="text" name="bonus" class="form-control" required="required"
-                                       placeholder="奖励">
+                                <!--类别-->
+                                <div class="row">
+                                    <label class="col-sm-1 control-label">类别</label>
 
-                                <input type="text" name="number" class="form-control" required="required"
-                                       placeholder="总人数">
+                                    <div class="col-sm-2">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="type" value="个人赛">
+                                                个人赛
+                                            </label>
+                                        </div>
+                                    </div>
 
-                                <input type="text" name="rule" class="form-control" required="required"
-                                       placeholder="规则">
+                                    <div class="col-sm-2">
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="type" value="团体赛">
+                                                团体赛
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                <input type="text" name="rulemore" class="form-control" required="required"
-                                       placeholder="规则详情">
+
+                                <!--目标-->
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="target" class="form-control" required="required"
+                                               placeholder="目标">
+                                    </div>
+
+                                    <div class="col-sm-3 col-sm-offset-1">
+
+                                        <input type="text" name="rule" class="form-control" required="required"
+                                               placeholder="规则">
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-7">
+                                        <textarea name="rulemore" class="form-control" required="required"
+                                               placeholder="规则详情"></textarea>
+                                    </div>
+                                </div>
 
 
                                 <button type="submit" class="btn btn-primary pull-left">
@@ -165,6 +181,7 @@
         var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
 
         var checkin = $('#dpd1').datepicker({
+            format: 'yyyy-mm-dd',
             onRender: function (date) {
                 return date.valueOf() < now.valueOf() ? 'disabled' : '';
             }
@@ -178,6 +195,7 @@
             $('#dpd2')[0].focus();
         }).data('datepicker');
         var checkout = $('#dpd2').datepicker({
+            format: 'yyyy-mm-dd',
             onRender: function (date) {
                 return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
             }
