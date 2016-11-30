@@ -32,7 +32,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/home', 'HomeController@index');
     Route::get('/sport', 'SportController@index');
     Route::get('/compete', 'CompeteController@index');
-    Route::get('/social', 'SocialController@index');
+    Route::get('/friend', 'SocialController@index');
+
 
     //Restful
     Route::resource('/competition', 'CompeteController');
@@ -40,5 +41,11 @@ Route::group(['middleware' => 'web'], function () {
 
     //个人竞赛管理
     Route::get('/my-competition', 'CompeteController@myCompete');
+
+    //社交信息
+    Route::get('/group', 'SocialController@group');
+    Route::get('/write-post', 'SocialController@writePost');
+
+    Route::post('/post', 'Social\PostController@storePost');
 
 });

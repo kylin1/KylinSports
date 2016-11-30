@@ -3,27 +3,25 @@
 @section('title','social7')
 
 @section('style')
-    <!--文本编辑器-->
-    <!--引入wangEditor.css-->
-    <link rel="stylesheet" type="text/css" href={{ asset('editor/css/wangEditor.min.css') }}>
+
 @stop
 
 
 @section('top-left-menu')
 
     <ul class="nav mynav-top navbar-nav navbar-left">
-        <li my-target="section-friends" class="active" id="li-friends">
-            <a href="#">
+        <li class="active" my-target="section-friends" id="li-friends">
+            <a href="{{ url('/friend') }}">
                 好友
             </a>
         </li>
         <li my-target="section-groups">
-            <a href="#">
+            <a href="{{ url('/group') }}">
                 群组
             </a>
         </li>
         <li my-target="section-write-post">
-            <a href="#">
+            <a href="{{ url('/write-post') }}">
                 发表动态
             </a>
         </li>
@@ -206,155 +204,6 @@
             </div>
         </section>
 
-        <section id="section-groups" class="init-hide">
-            <h2>我的群组</h2>
-            <div class="row">
-                <div class="col-md-10">
-
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card card-close">
-                                <!--信息行-->
-                                <div class="row">
-                                    <!--第一列头像-->
-                                    <div class="col-sm-2 col-sm-offset-1">
-                                        <img src= "{{ asset('img/avatar.jpg') }}" alt="Circle Image"
-                                             class="img-circle img-responsive img-small">
-                                    </div>
-
-                                    <!--第二列成员+时间-->
-                                    <div class="col-sm-4">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h5>减脂大本营</h5>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="stats">
-                                                    20989 名成员
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <!--动态内容行-->
-                                <div class="row">
-                                    <div class="col-sm-10 col-sm-offset-1">
-                                        <h4>分析自己减脂期的点点滴滴,一起讨论关于减脂的困惑,在路上一起互相鼓励吧!</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card card-close">
-                                <!--信息行-->
-                                <div class="row">
-                                    <!--第一列头像-->
-                                    <div class="col-sm-2 col-sm-offset-1">
-                                        <img src= "{{ asset('img/avatar.jpg') }}" alt="Circle Image"
-                                             class="img-circle img-responsive img-small">
-                                    </div>
-
-                                    <!--第二列成员+时间-->
-                                    <div class="col-sm-4">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h5>减脂大本营</h5>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="stats">
-                                                    20989 名成员
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <!--动态内容行-->
-                                <div class="row">
-                                    <div class="col-sm-10 col-sm-offset-1">
-                                        <h4>分析自己减脂期的点点滴滴,一起讨论关于减脂的困惑,在路上一起互相鼓励吧!</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card card-close">
-                                <!--信息行-->
-                                <div class="row">
-                                    <!--第一列头像-->
-                                    <div class="col-sm-2 col-sm-offset-1">
-                                        <img src= "{{ asset('img/avatar.jpg') }}" alt="Circle Image"
-                                             class="img-circle img-responsive img-small">
-                                    </div>
-
-                                    <!--第二列成员+时间-->
-                                    <div class="col-sm-4">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h5>减脂大本营</h5>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="stats">
-                                                    20989 名成员
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <!--动态内容行-->
-                                <div class="row">
-                                    <div class="col-sm-10 col-sm-offset-1">
-                                        <h4>分析自己减脂期的点点滴滴,一起讨论关于减脂的困惑,在路上一起互相鼓励吧!</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="section-write-post" class="init-hide">
-            <div class="row">
-                <div class="col-md-10">
-                    <h2>请编写动态</h2>
-                    <div id="div1" style="height: 300px;">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-1" style="margin-right:20px;">
-                    <button class="btn btn-success">发表</button>
-                </div>
-                <div class="col-md-1" id="cancel-post">
-                    <button class="btn btn-default">取消</button>
-                </div>
-            </div>
-
-        </section>
-
 
     </div>
 @stop
@@ -363,32 +212,6 @@
 
 
 @section('javascript')
-
-    <script>
-        $(document).ready(function () {
-            //上部导航栏点击li元素
-            $('ul.mynav-top > li').click(function (event) {
-                // 只有被点击的导航li被显示active
-                $('ul.mynav-top > li').removeClass('active');
-                $(this).addClass('active');
-
-                // 显示对应部分的内容
-                $('div.container-sharing > section').hide();
-                var target = '#' + this.getAttribute('my-target');
-                $(target).show();
-            });
-        });
-    </script>
-
-    <!--引入jquery和wangEditor.js-->   <!--注意：javascript必须放在body最后，否则可能会出现问题-->
-    <script src= {{ asset('editor/js/lib/jquery-1.10.2.min.js') }}></script>
-    <script src= {{ asset('editor/js/wangEditor.min.js') }}></script>
-
-    <!--这里引用jquery和wangEditor.js-->
-    <script type="text/javascript">
-        var editor = new wangEditor('div1');
-        editor.create();
-    </script>
 
 @stop
 

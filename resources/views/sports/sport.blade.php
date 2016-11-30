@@ -1,7 +1,6 @@
 @extends('layout.layouts')
 
-@section('title','sport new')
-
+@section('title','运动统计')
 
 @section('style')
 @stop

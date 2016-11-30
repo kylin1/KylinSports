@@ -76,7 +76,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href= {{ url('/social') }}>
+                    <a href= {{ url('/friend') }}>
                         <i class="material-icons">group</i>
                         <p>圈子</p>
                     </a>

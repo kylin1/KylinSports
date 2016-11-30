@@ -12,7 +12,15 @@ class SocialController extends Controller{
 
 
     public function index(){
-        return view('sports.social');
+        return view('social.friend');
+    }
+
+    public function group(){
+        return view('social.group');
+    }
+
+    public function writePost(){
+        return view('social.new-post');
     }
 
 }
