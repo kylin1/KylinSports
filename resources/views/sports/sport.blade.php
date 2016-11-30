@@ -60,7 +60,7 @@
                         <div class="card-content">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <h4 class="title">步数统计</h4>
+                                    <h4 class="title">步数统计 (步数)</h4>
                                 </div>
                                 <div class="col-sm-8">
                                     <ul class="nav navbar-nav navbar-right">
@@ -109,7 +109,7 @@
 
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <h4 class="title">心率统计</h4>
+                                    <h4 class="title">心率统计 (次/分钟)</h4>
                                 </div>
                             </div>
                         </div>
@@ -213,30 +213,15 @@
                                 <th>时长</th>
                                 </thead>
                                 <tbody>
+
+                                @foreach($sleepDetail as $oneDay)
                                 <tr>
-                                    <td>周一</td>
-                                    <td>11：00</td>
-                                    <td>7：00</td>
-                                    <td>8</td>
+                                    <td>{{ $oneDay[0] }}</td>
+                                    <td>{{ $oneDay[1] }}:00</td>
+                                    <td>{{ $oneDay[2] }}:00</td>
+                                    <td>{{ $oneDay[3] }}小时</td>
                                 </tr>
-                                <tr>
-                                    <td>周2</td>
-                                    <td>11：00</td>
-                                    <td>7：00</td>
-                                    <td>8</td>
-                                </tr>
-                                <tr>
-                                    <td>周3</td>
-                                    <td>11：00</td>
-                                    <td>7：00</td>
-                                    <td>8</td>
-                                </tr>
-                                <tr>
-                                    <td>周4</td>
-                                    <td>11：00</td>
-                                    <td>7：00</td>
-                                    <td>8</td>
-                                </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -317,24 +302,87 @@
 
 
 @section('javascript')
-    <script src= {{ asset('js/sport.js') }}></script>
+    <script>
+
+        var DrawChart = (function() {
+
+            var responsiveOptions = [
+                ['screen and (max-width: 640px)', {
+                    seriesBarDistance: 5,
+                    axisX: {
+                        labelInterpolationFnc: function (value) {
+                            return value[0];
+                        }
+                    }
+                }]
+            ];
+
+            return {
+                createLineChart: function (id, data, high, low, yValue) {
+
+                    var options = {
+                        high:high,
+                        low:low,
+                        axisX: {
+                            showGrid: false
+                        },
+
+                        axisY: {
+                            labelInterpolationFnc: function(value) {
+                                return value + yValue;
+                            }
+                        },
+
+                        chartPadding: { top: 0, right: 15, bottom: 0, left: 20}
+                    };
+
+                    var runLineChart = Chartist.Bar(document.getElementById(id), data, options, responsiveOptions);
+                    md.startAnimationForBarChart(runLineChart);
+                },
+
+                createBarChart: function (id, data,high, low, yValue) {
+
+                    var options = {
+                        high:high,
+                        low:low,
+                        axisX: {
+                            showGrid: false
+                        },
+
+                        axisY: {
+                            labelInterpolationFnc: function(value) {
+                                return value + yValue;
+                            }
+                        },
+
+                        chartPadding: { top: 0, right: 15, bottom: 0, left: 20}
+                    };
+
+                    var sleepBarChart = Chartist.Bar(document.getElementById(id), data, options, responsiveOptions);
+                    md.startAnimationForBarChart(sleepBarChart);
+                }
+            }
+        })();
+
+    </script>
 
     <script>
         function drawChart() {
             var dataStepsBar ={!! $dataStepsBar !!};
-            createBarChart('stepsBarChart',dataStepsBar ,'step');
+            DrawChart.createBarChart('stepsBarChart',dataStepsBar,20000,0,'');
             var dataHeartChart ={!! $dataHeartChart !!};
-            createLineChart('heartRateChart',dataHeartChart,'heart');
+            DrawChart.createBarChart('heartRateChart',dataHeartChart,100,60,'');
+
             var dataRunLineChart ={!! $dataRunLineChart !!};
-            createLineChart('runLineChart',dataRunLineChart,'run');
+            DrawChart.createLineChart('runLineChart',dataRunLineChart,10,0,'km');
 
             var dataSleepBar ={!! $dataSleepBar !!};
-            createBarChart('sleepBarChart',dataSleepBar,'sleep');
+            DrawChart.createBarChart('sleepBarChart',dataSleepBar,10,5,'h');
 
             var dataWeightChart ={!! $dataWeightChart !!};
-            createLineChart('weightChart',dataWeightChart,'weight');
+            DrawChart.createLineChart('weightChart',dataWeightChart,70,50,'kg');
             var dataFatChart ={!! $dataFatChart !!};
-            createLineChart('fatChart',dataFatChart,'fat');
+            DrawChart.createLineChart('fatChart',dataFatChart,30,10,'%');
         }
     </script>
 

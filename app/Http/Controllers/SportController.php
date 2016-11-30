@@ -31,6 +31,7 @@ class SportController extends Controller
 
         $sleepController = new SleepController;
         $dataSleepBar = $sleepController->sleepBar($userid);
+        $sleepDetail = $sleepController->sleepDetail($userid);
 
         return view('sports.sport',[
             'dataStepsBar' => $dataStepsBar,
@@ -41,6 +42,7 @@ class SportController extends Controller
 
             'dataWeightChart' => $dataWeightChart,
             'dataFatChart' => $dataFatChart,
+            'sleepDetail' => $sleepDetail,
         ]);
     }
 
@@ -63,6 +65,8 @@ where userid == ' . $id . ' order by `date` desc limit 10');
             $labels[] = $oneInfo->date;
             $series[] = (int)$stepOne;
         }
+        $labels = array_reverse($labels);
+        $series = array_reverse($series);
 
         $arr = ['labels' => $labels, 'series' => [$series]];
         $dataStepsBar = json_encode($arr);
@@ -87,6 +91,8 @@ where userid == ' . $id . ' order by `date` desc limit 10');
             $labels[] = $oneInfo->date;
             $series[] = (int)$stepOne;
         }
+        $labels = array_reverse($labels);
+        $series = array_reverse($series);
 
         $arr = ['labels' => $labels, 'series' => [$series]];
         $heartLineChart = json_encode($arr);
@@ -107,10 +113,12 @@ where userid == ' . $id . ' order by `date` desc limit 10');
 where userid == ' . $id . ' order by `date` desc limit 10');
 
         foreach ($stepInfo as $oneInfo) {
-            $stepOne = $oneInfo->meters;
+            $stepOne = $oneInfo->meters / 1000;
             $labels[] = $oneInfo->date;
             $series[] = (int)$stepOne;
         }
+        $labels = array_reverse($labels);
+        $series = array_reverse($series);
 
         $arr = ['labels' => $labels, 'series' => [$series]];
         $runHistory = json_encode($arr);

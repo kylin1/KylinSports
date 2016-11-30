@@ -37,6 +37,9 @@ where userid == ' . $id . ' order by `date` desc limit 10');
             $series[] = (int)$weight;
 
         }
+        $labels = array_reverse($labels);
+        $series = array_reverse($series);
+
         $arr = ['labels' => $labels, 'series' => [$series]];
         $dataWeightChart = json_encode($arr);
 
@@ -63,6 +66,9 @@ where userid == ' . $id . ' order by `date` desc limit 10');
             $labels[] = $date;
             $series[] = (int)$weight;
         }
+        $labels = array_reverse($labels);
+        $series = array_reverse($series);
+
         $arr = ['labels' => $labels, 'series' => [$series]];
         $dataWeightChart = json_encode($arr);
 
