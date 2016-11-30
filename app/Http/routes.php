@@ -41,7 +41,7 @@ Route::group(['middleware' => 'web'], function () {
 
     //Restful
     Route::resource('/competition', 'CompeteController');
-    Route::resource('/user', 'UserController');
+    Route::resource('/user', 'MyUserController');
 
     //个人竞赛管理
     Route::get('/my-competition', 'CompeteController@myCompete');

@@ -20,19 +20,22 @@
                         <p class="category"></p>
                     </div>
                     <div class="card-content">
-                        <form>
+
+                        <form action="{{ url('user') }}" method="POST">
+
+                            {!! csrf_field() !!}
                             <!--名称行-->
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group label-floating">
                                         <label class="control-label">姓名</label>
-                                        <input type="text" class="form-control">
+                                        <input name="name" type="text" class="form-control" value="{{ $thisUser->name }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group label-floating">
                                         <label class="control-label">昵称</label>
-                                        <input type="text" class="form-control" >
+                                        <input name="nickname" type="text" class="form-control" value="{{ $thisUser->nickname }}">
                                     </div>
                                 </div>
                             </div>
@@ -41,23 +44,21 @@
                             <div class="row">
                                 <label class="col-sm-1 control-label">性别</label>
 
+                                {{--从控制器返回的一个实例中获取SEX的键值对,以便显示--}}
+                                @foreach($thisUser->sex() as $id=>$value)
                                 <div class="col-sm-1">
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios">
-                                            男
-                                        </label>
-                                    </div>
+                                    <label class="radio-inline">
+                                        {{--赋值给一个数组,数值为性别--}}
+                                        <input type="radio" name="sex"
+                                               {{--如果性别已经有了,则标记为点击--}}
+                                               {{ isset($thisUser->sex) && $thisUser->sex == $value ?
+                                               'checked' : ''  }}
+                                               value="{{ $value }}">
+                                        {{ $value }}
+                                    </label>
                                 </div>
+                                @endforeach
 
-                                <div class="col-sm-1">
-                                    <div class="radio">
-                                        <label>
-                                            <input type="radio" name="optionsRadios">
-                                            女
-                                        </label>
-                                    </div>
-                                </div>
                             </div>
 
                             <div class="row">
@@ -72,7 +73,8 @@
 
                                         <div class="col-sm-2">
                                             <div style="display: inline-block">
-                                                <input type="text" id="date">
+                                                <input name="birthday" type="text" id="date"
+                                                       value="{{ $thisUser->birthday }}" >
                                             </div>
                                         </div>
                                     </div>
@@ -120,7 +122,7 @@
                                     <div class="form-group">
                                         <div class="form-group label-floating">
                                             <label class="control-label">个人简介</label>
-                                            <textarea class="form-control" rows="5"></textarea>
+                                            <textarea name="introduction" class="form-control" rows="5">{{ $thisUser->introduction }}</textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -128,6 +130,7 @@
 
                             <button type="submit" class="btn btn-primary pull-left">
                                 保存</button>
+
                             <div class="clearfix"></div>
                         </form>
                     </div>
@@ -146,6 +149,8 @@
     <script src= {{ asset('datepicker/js/bootstrap-datepicker.js') }} ></script>
 
     <script>
-        $('#date').datepicker();
+        $('#date').datepicker({
+            format: 'yyyy-mm-dd'
+        });
     </script>
 @stop

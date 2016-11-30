@@ -46,7 +46,7 @@
                             <form action="{{ url('competition') }}" method="POST">
                             {!! csrf_field() !!}
 
-                                <!--类别-->
+                            <!--类别-->
                                 <div class="row">
                                     <label class="col-sm-1 control-label">类别</label>
 
@@ -108,31 +108,38 @@
 
                                 {{--<!--竞赛介绍行-->--}}
                                 {{--<div class="row">--}}
-                                    {{--<div class="col-md-12">--}}
-                                        {{--<div class="form-group">--}}
-                                            {{--<div class="form-group label-floating">--}}
-                                                {{--<label class="control-label"> 竞赛介绍</label>--}}
-                                                {{--<textarea class="form-control" rows="5" name="target"></textarea>--}}
-                                            {{--</div>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
+                                {{--<div class="col-md-12">--}}
+                                {{--<div class="form-group">--}}
+                                {{--<div class="form-group label-floating">--}}
+                                {{--<label class="control-label"> 竞赛介绍</label>--}}
+                                {{--<textarea class="form-control" rows="5" name="target"></textarea>--}}
+                                {{--</div>--}}
+                                {{--</div>--}}
+                                {{--</div>--}}
                                 {{--</div>--}}
 
-                                <input type="text" name="name" class="form-control" required="required" placeholder="竞赛名称">
+                                <input type="text" name="name" class="form-control" required="required"
+                                       placeholder="竞赛名称">
 
-                                <input type="text" name="bonus" class="form-control" required="required" placeholder="奖励">
+                                <input type="text" name="bonus" class="form-control" required="required"
+                                       placeholder="奖励">
 
-                                <input type="text" name="number" class="form-control" required="required" placeholder="总人数">
+                                <input type="text" name="number" class="form-control" required="required"
+                                       placeholder="总人数">
 
-                                <input type="text" name="rule" class="form-control" required="required" placeholder="规则">
+                                <input type="text" name="rule" class="form-control" required="required"
+                                       placeholder="规则">
 
-                                <input type="text" name="rulemore" class="form-control" required="required" placeholder="规则详情">
+                                <input type="text" name="rulemore" class="form-control" required="required"
+                                       placeholder="规则详情">
 
 
                                 <button type="submit" class="btn btn-primary pull-left">
-                                    新建竞赛</button>
+                                    新建竞赛
+                                </button>
                                 <button type="submit" class="btn btn-default pull-left">
-                                    取消</button>
+                                    取消
+                                </button>
                                 <div class="clearfix"></div>
                             </form>
                         </div>
@@ -147,19 +154,19 @@
 @section('javascript')
 
     <!--  Plugin for the Datepicker-->
-    <script src= {{ asset('datepicker/js/bootstrap-datepicker.js') }} type="text/javascript"></script>
+    <script src={{ asset('datepicker/js/bootstrap-datepicker.js') }} type="text/javascript"></script>
 
     <script>
         var nowTemp = new Date();
         var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
 
         var checkin = $('#dpd1').datepicker({
-            onRender: function(date) {
+            onRender: function (date) {
                 return date.valueOf() < now.valueOf() ? 'disabled' : '';
             }
-        }).on('changeDate', function(ev) {
+        }).on('changeDate', function (ev) {
             if (ev.date.valueOf() > checkout.date.valueOf()) {
-                var newDate = new Date(ev.date)
+                var newDate = new Date(ev.date);
                 newDate.setDate(newDate.getDate() + 1);
                 checkout.setValue(newDate);
             }
@@ -167,10 +174,10 @@
             $('#dpd2')[0].focus();
         }).data('datepicker');
         var checkout = $('#dpd2').datepicker({
-            onRender: function(date) {
+            onRender: function (date) {
                 return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
             }
-        }).on('changeDate', function(ev) {
+        }).on('changeDate', function (ev) {
             checkout.hide();
         }).data('datepicker');
     </script>

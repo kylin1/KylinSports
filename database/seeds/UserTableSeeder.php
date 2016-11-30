@@ -21,7 +21,7 @@ class UserTableSeeder extends Seeder
                 'password' => 'pass' . $i,
 
                 'nickname' => 'nickname' . $i,
-                'birthday' => strtotime('now'),
+                'birthday' => '1996-06-12',
 
                 'sex' => '男',
 
