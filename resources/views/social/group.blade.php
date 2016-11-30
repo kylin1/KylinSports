@@ -36,6 +36,7 @@
             <div class="row">
                 <div class="col-md-10">
 
+                    @foreach($myGroup as $group)
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="card card-close">
@@ -43,7 +44,7 @@
                                 <div class="row">
                                     <!--第一列头像-->
                                     <div class="col-sm-2 col-sm-offset-1">
-                                        <img src= "{{ asset('img/avatar.jpg') }}" alt="Circle Image"
+                                        <img src= "{{ asset('img/tim_80x80.png') }}" alt="Circle Image"
                                              class="img-circle img-responsive img-small">
                                     </div>
 
@@ -51,111 +52,33 @@
                                     <div class="col-sm-4">
                                         <div class="row">
                                             <div class="col-sm-12">
-                                                <h5>减脂大本营</h5>
+                                                <h5>团队名称: {{ $group->name }}</h5>
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="stats">
-                                                    20989 名成员
+                                                   团队人数: {{ $group->membernum }}
                                                 </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h4>{{ $group->introduction }}</h4>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div>
 
-                                <!--动态内容行-->
-                                <div class="row">
-                                    <div class="col-sm-10 col-sm-offset-1">
-                                        <h4>分析自己减脂期的点点滴滴,一起讨论关于减脂的困惑,在路上一起互相鼓励吧!</h4>
-                                    </div>
-                                </div>
+
                             </div>
 
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card card-close">
-                                <!--信息行-->
-                                <div class="row">
-                                    <!--第一列头像-->
-                                    <div class="col-sm-2 col-sm-offset-1">
-                                        <img src= "{{ asset('img/avatar.jpg') }}" alt="Circle Image"
-                                             class="img-circle img-responsive img-small">
-                                    </div>
-
-                                    <!--第二列成员+时间-->
-                                    <div class="col-sm-4">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h5>减脂大本营</h5>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="stats">
-                                                    20989 名成员
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <!--动态内容行-->
-                                <div class="row">
-                                    <div class="col-sm-10 col-sm-offset-1">
-                                        <h4>分析自己减脂期的点点滴滴,一起讨论关于减脂的困惑,在路上一起互相鼓励吧!</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div class="card card-close">
-                                <!--信息行-->
-                                <div class="row">
-                                    <!--第一列头像-->
-                                    <div class="col-sm-2 col-sm-offset-1">
-                                        <img src= "{{ asset('img/avatar.jpg') }}" alt="Circle Image"
-                                             class="img-circle img-responsive img-small">
-                                    </div>
-
-                                    <!--第二列成员+时间-->
-                                    <div class="col-sm-4">
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h5>减脂大本营</h5>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="stats">
-                                                    20989 名成员
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <!--动态内容行-->
-                                <div class="row">
-                                    <div class="col-sm-10 col-sm-offset-1">
-                                        <h4>分析自己减脂期的点点滴滴,一起讨论关于减脂的困惑,在路上一起互相鼓励吧!</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

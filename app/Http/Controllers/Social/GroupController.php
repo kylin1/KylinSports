@@ -15,28 +15,12 @@ use Illuminate\Http\Request;
 
 class GroupController extends Controller{
 
-    /**
-     * 返回指定⽤户参与的群组列表
-     *
-     * @param $userID
-     * @return array
-     */
-    public function groupList($userID){
-        $groupList = GroupMember::where('userid',$userID)->get();
-        $resultList = array();
-        foreach ($groupList as $group){
-            $groupId = $group->groupid;
-            $oneGroup = $this->show($groupId);
-            $resultList[] = $oneGroup;
-        }
-        return $resultList;
-    }
 
     /**
      * new group
      *
      * @param Request $request
-     * @return para
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function create(Request $request){
         //如果是提交

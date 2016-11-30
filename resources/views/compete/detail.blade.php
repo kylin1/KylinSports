@@ -42,8 +42,8 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <p>离比赛开始 13小时 17分 51秒</p>
-                                            <p> {{ date('Y-m-d', $compete->startAt) }}
-                                                至 {{ date('Y-m-d', $compete->endAt) }}</p>
+                                            <p> {{ date('Y-m-d H:m:s', $compete->startAt) }}
+                                                至 {{ date('Y-m-d H:m:s', $compete->endAt) }}</p>
                                         </div>
                                     </div>
                                 </div>

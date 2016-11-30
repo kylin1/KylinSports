@@ -38,6 +38,7 @@
 
                     <div class="row">
                         <div class="col-sm-12">
+                            @foreach($friendPost as $post)
                             <div class="card card-close">
                                 <!--个人信息行-->
                                 <div class="row">
@@ -51,14 +52,14 @@
                                     <div class="col-sm-4">
                                         <div class="row">
                                             <div class="col-sm-1">
-                                                <h5>avatar</h5>
+                                                <h5>{{ $post->userid }}</h5>
                                             </div>
                                         </div>
 
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="stats">
-                                                    4 minutes ago
+                                                    {{ $post->created_at }}
                                                 </div>
                                             </div>
                                         </div>
@@ -69,83 +70,11 @@
                                 <!--动态内容行-->
                                 <div class="row">
                                     <div class="col-sm-10 col-sm-offset-1">
-                                        <h4>最新动态: #咕咚笑#告诉我，我从2014年4月30日 14:40 到 5月12日 10:10,
-                                            走了 67 步，58 米，燃烧 2.7 大卡。</h4>
+                                        <h4>最新动态: {{ $post->content }}</h4>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="card card-close">
-                                <!--个人信息行-->
-                                <div class="row">
-                                    <!--第一列头像-->
-                                    <div class="col-sm-2 col-sm-offset-1">
-                                        <img src= "{{ asset('img/marc.jpg') }}" alt="Circle Image"
-                                             class="img-circle img-responsive">
-                                    </div>
-
-                                    <!--第二列名字+时间-->
-                                    <div class="col-sm-4">
-                                        <div class="row">
-                                            <div class="col-sm-1">
-                                                <h5>marc</h5>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="stats">
-                                                    10 minutes ago
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <!--动态内容行-->
-                                <div class="row">
-                                    <div class="col-sm-10 col-sm-offset-1">
-                                        <h4>刚刚跑了南马的半马,感觉很是轻松,看来训练卓有成效,以后可以挑战全马了!!!</h4>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="card card-close">
-                                <!--个人信息行-->
-                                <div class="row">
-                                    <!--第一列头像-->
-                                    <div class="col-sm-2 col-sm-offset-1">
-                                        <img src= "{{ asset('img/kendall.jpg') }}" alt="Circle Image"
-                                             class="img-circle img-responsive">
-                                    </div>
-
-                                    <!--第二列名字+时间-->
-                                    <div class="col-sm-4">
-                                        <div class="row">
-                                            <div class="col-sm-1">
-                                                <h5>kendall</h5>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <div class="stats">
-                                                    20 minutes ago
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="row">
-                                    <div class="col-sm-10 col-sm-offset-1">
-                                        <h4>新活动: 洛带骑游记 http://dwz.cn/kHL2F</h4>
-                                    </div>
-                                </div>
-                            </div>
-
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -163,37 +92,15 @@
                                     <th>等级</th>
                                     </thead>
                                     <tbody>
+
+                                    @foreach($friendList as $friend)
                                     <tr>
-                                        <td>Dakota Rice</td>
-                                        <td>男</td>
-                                        <td>跑步,健身</td>
-                                        <td class="text-primary">T1</td>
+                                        <td>{{ $friend->name }}</td>
+                                        <td>{{ $friend->sex }}</td>
+                                        <td>{{ $friend->hobby }}</td>
+                                        <td class="text-primary">T{{ $friend->sportrank }}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Minva Hooper</td>
-                                        <td>男</td>
-                                        <td>跑步,羽毛球</td>
-                                        <td class="text-primary">T2</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mason Porter</td>
-                                        <td>女</td>
-                                        <td>游泳,登山</td>
-                                        <td class="text-primary">T1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tim</td>
-                                        <td>男</td>
-                                        <td>无</td>
-                                        <td class="text-primary">T0</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Zuck</td>
-                                        <td>难</td>
-                                        <td>跑步</td>
-                                        <td class="text-primary">T3</td>
-                                    </tr>
-                                    </tbody>
+                                    @endforeach
                                 </table>
 
                             </div>

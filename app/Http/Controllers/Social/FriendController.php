@@ -17,30 +17,6 @@ use App\Post;
 class FriendController extends Controller{
 
 
-
-    /**
-     * 返回指定⽤户的好友的动态
-     *
-     * @param $id
-     * @return array
-     */
-    public function friendPost($id){
-        $resultList = array();
-
-        $friendList = TestClass::friendList($id);
-        // 这个用户的所有好友
-        foreach ($friendList as $friend){
-            $friendId = $friend->id;
-            //好友的所有动态信息
-            $postList = Post::where('userid',$friendId)->get();
-            foreach ($postList as $post){
-                $resultList[] = $post;
-            }
-        }
-
-        return $resultList;
-    }
-
     /**
      * 显示好友详细信息
      *
