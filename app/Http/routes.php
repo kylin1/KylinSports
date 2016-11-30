@@ -10,6 +10,7 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+
 //restful注入数据接口
 Route::group(['middleware' => ['web']], function()
 {
@@ -24,16 +25,19 @@ Route::group(['middleware' => ['web']], function()
     Route::get('data/users/{uid}/hourdata','Sport\DataController@getHourlyData');
 });
 
+
 //应用路由
 Route::group(['middleware' => 'web'], function () {
+
     Route::auth();
+
     Route::get('/', 'HomeController@index');
+
     //各个主界面
     Route::get('/home', 'HomeController@index');
     Route::get('/sport', 'SportController@index');
     Route::get('/compete', 'CompeteController@index');
     Route::get('/friend', 'SocialController@index');
-
 
     //Restful
     Route::resource('/competition', 'CompeteController');

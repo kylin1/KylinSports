@@ -70,7 +70,7 @@
 
                 <!--下面是其他的item代表更多的导航-->
                 <li>
-                    <a href= {{ url('/compete') }}>
+                    <a href= {{ url('/competition') }}>
                         <i class="material-icons">stars</i>
                         <p>竞赛</p>
                     </a>

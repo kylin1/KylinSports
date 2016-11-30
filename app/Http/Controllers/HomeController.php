@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Facades\TestClass;
 use App\HourData;
-use App\Http\Controllers\Social\FriendController;
 use App\Util;
 use Illuminate\Support\Facades\Auth;
 
