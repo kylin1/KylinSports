@@ -6,6 +6,10 @@
 
 @stop
 
+@section('left-menu')
+    @include('menu.social')
+@stop
+
 
 @section('top-left-menu')
 

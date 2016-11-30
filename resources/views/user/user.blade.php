@@ -8,6 +8,46 @@
 @stop
 
 
+@section('left-menu')
+    @include('menu.empty')
+@stop
+
+@section('top-right-menu')
+    <div class="collapse navbar-collapse" id="example-navbar-primary">
+
+        <ul class="nav navbar-nav navbar-right">
+
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="material-icons">notifications</i>
+                    <span class="notification">3</span>
+                    <p class="hidden-lg hidden-md">Notifications</p>
+                    消息
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">一只麟请求加您为好友</a></li>
+                    <li><a href="#">您的今日目标还未达到,要加油啦~</a></li>
+                    <li><a href="#">竞赛:"7日100公里"即将结束,请抓紧时间上传数据</a></li>
+                </ul>
+            </li>
+
+            <li class="active">
+                <a href= {{ url('/user') }}>
+                    <i class="material-icons">account_circle</i>
+                    账户
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+                    <i class="material-icons">settings</i>
+                    设置
+                </a>
+            </li>
+        </ul>
+    </div>
+@stop
+
 @section('content')
     <div class="container-fluid">
 

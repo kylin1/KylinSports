@@ -1,9 +1,13 @@
 @extends('layout.layouts')
 
-@section('title','today')
+@section('title','今日')
 
 @section('style')
 
+@stop
+
+@section('left-menu')
+    @include('menu.today')
 @stop
 
 

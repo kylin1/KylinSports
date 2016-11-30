@@ -1,9 +1,13 @@
 @extends('layout.layouts')
 
-@section('title','竞赛3')
+@section('title','竞赛信息')
 
 @section('style')
 
+@stop
+
+@section('left-menu')
+    @include('menu.compete')
 @stop
 
 @section('top-left-menu')

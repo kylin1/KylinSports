@@ -8,6 +8,9 @@
     <link rel="stylesheet" type="text/css" href={{ asset('editor/css/wangEditor.min.css') }}>
 @stop
 
+@section('left-menu')
+    @include('menu.social')
+@stop
 
 @section('top-left-menu')
 

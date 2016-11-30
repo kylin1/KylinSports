@@ -1,11 +1,14 @@
 @extends('layout.layouts')
 
-@section('title','social7')
+@section('title','好友信息')
 
 @section('style')
 
 @stop
 
+@section('left-menu')
+    @include('menu.social')
+@stop
 
 @section('top-left-menu')
 

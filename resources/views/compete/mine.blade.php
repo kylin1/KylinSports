@@ -6,6 +6,10 @@
 
 @stop
 
+@section('left-menu')
+    @include('menu.compete')
+@stop
+
 @section('top-left-menu')
     <ul class="nav mynav-top navbar-nav navbar-left">
         <li my-target="section-all-compete">

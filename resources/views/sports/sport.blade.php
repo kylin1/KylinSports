@@ -5,6 +5,10 @@
 @section('style')
 @stop
 
+@section('left-menu')
+    @include('menu.sport')
+@stop
+
 
 @section('top-left-menu')
 
@@ -318,19 +322,19 @@
     <script>
         function drawChart() {
             var dataStepsBar ={!! $dataStepsBar !!};
-            var dataRunLineChart ={!! $dataRunLineChart !!};
-            var dataHeartChart ={!! $dataHeartChart !!};
-            var dataWeightChart ={!! $dataWeightChart !!};
-            var dataFatChart ={!! $dataFatChart !!};
-            var dataSleepBar ={!! $dataSleepBar !!};
-
-            createLineChart('runLineChart',dataRunLineChart,'run');
-            createLineChart('weightChart',dataWeightChart,'weight');
-            createLineChart('fatChart',dataFatChart,'fat');
-            createLineChart('heartRateChart',dataHeartChart,'heart');
-
             createBarChart('stepsBarChart',dataStepsBar ,'step');
+            var dataHeartChart ={!! $dataHeartChart !!};
+            createLineChart('heartRateChart',dataHeartChart,'heart');
+            var dataRunLineChart ={!! $dataRunLineChart !!};
+            createLineChart('runLineChart',dataRunLineChart,'run');
+
+            var dataSleepBar ={!! $dataSleepBar !!};
             createBarChart('sleepBarChart',dataSleepBar,'sleep');
+
+            var dataWeightChart ={!! $dataWeightChart !!};
+            createLineChart('weightChart',dataWeightChart,'weight');
+            var dataFatChart ={!! $dataFatChart !!};
+            createLineChart('fatChart',dataFatChart,'fat');
         }
     </script>
 

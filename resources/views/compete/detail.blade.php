@@ -1,6 +1,6 @@
 @extends('layout.layouts')
 
-@section('title','compete-detail')
+@section('title','竞赛详情')
 
 @section('top-left-menu')
 <ul class="nav mynav-top navbar-nav navbar-left">
@@ -12,6 +12,9 @@
 </ul>
 @stop
 
+@section('left-menu')
+    @include('menu.compete')
+@stop
 
 @section('content')
     <div class="container-fluid container-sharing">

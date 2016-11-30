@@ -34,11 +34,13 @@ class SportController extends Controller
 
         return view('sports.sport',[
             'dataStepsBar' => $dataStepsBar,
-            'dataRunLineChart' => $dataRunLineChart,
             'dataHeartChart' => $dataHeartChart,
+            'dataRunLineChart' => $dataRunLineChart,
+
+            'dataSleepBar' => $dataSleepBar,
+
             'dataWeightChart' => $dataWeightChart,
             'dataFatChart' => $dataFatChart,
-            'dataSleepBar' => $dataSleepBar,
         ]);
     }
 

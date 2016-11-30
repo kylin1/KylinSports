@@ -1,10 +1,14 @@
 @extends('layout.layouts')
 
-@section('title','create-compete')
+@section('title','创建竞赛')
 
 @section('style')
     <!-- 日期选择 -->
     <link rel="stylesheet" href= {{ asset('datepicker/css/datepicker.css') }}>
+@stop
+
+@section('left-menu')
+    @include('menu.compete')
 @stop
 
 @section('top-left-menu')
