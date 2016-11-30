@@ -2,11 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cd97aeba-7ff7-4694-a18d-84b11e30f17a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CompeteMember.php" afterPath="$PROJECT_DIR$/app/CompeteMember.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/CompeteController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/CompeteController.php" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/文档/0-课程项目要求.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/文档/系统设计文档.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/html5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/提交说明文档.docx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/一次跑步记录.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/主页-多个区域.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/主页-多种数据1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/主页-多种数据2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/今天-各种数据.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/体重折线图.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/健身记录主页.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/好友列表.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/已爬楼层柱状图.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/心率-折线图.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/步数柱状图.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/睡眠柱状图1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/睡眠柱状图2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/荣誉勋章.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/阶段1/项目参考/锻炼日历.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/compete/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/compete/index.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/compete/edit.blade.php" afterPath="$PROJECT_DIR$/resources/views/compete/edit.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/compete/mine.blade.php" afterPath="$PROJECT_DIR$/resources/views/compete/mine.blade.php" />
     </list>
     <ignored path="laravel.iws" />
@@ -29,16 +45,6 @@
     <option name="SHOW_TABLE_DETAILS" value="true" />
     <option name="SHOW_EMPTY_GROUPS" value="false" />
     <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="Sqlite (Xerial) - database.sqlite" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -73,28 +79,18 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="48" column="42" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="42" />
+            <state relative-caret-position="340">
+              <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sport.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/sports/sport.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="359" column="11" selection-start-line="342" selection-start-column="8" selection-end-line="359" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CompeteController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CompeteController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompeteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="281" column="81" selection-start-line="281" selection-start-column="81" selection-end-line="281" selection-end-column="81" />
+            <state relative-caret-position="246">
+              <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
               <folding>
                 <element signature="e#6#87#0#PHP" expanded="true" />
                 <element signature="e#122#144#0#PHP" expanded="true" />
@@ -103,41 +99,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="detail.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/compete/detail.blade.php">
+      <file leaf-file-name="edit.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/compete/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SocialController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SocialController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/compete/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-121">
-              <caret line="63" column="132" selection-start-line="63" selection-start-column="132" selection-end-line="63" selection-end-column="132" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mine.blade.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="mine.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/compete/mine.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="143" column="68" selection-start-line="143" selection-start-column="68" selection-end-line="143" selection-end-column="68" />
+            <state relative-caret-position="186">
+              <caret line="52" column="135" selection-start-line="52" selection-start-column="135" selection-end-line="52" selection-end-column="135" />
               <folding />
             </state>
           </provider>
@@ -191,7 +167,6 @@
         <option value="$PROJECT_DIR$/resources/views/menu/compete.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/menu/social.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/compete/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/compete/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/social/friend.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/social/group.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/social/new-post.blade.php" />
@@ -206,9 +181,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/SocialController.php" />
         <option value="$PROJECT_DIR$/resources/views/compete/index.blade.php" />
         <option value="$PROJECT_DIR$/app/CompeteMember.php" />
-        <option value="$PROJECT_DIR$/app/Http/routes.php" />
-        <option value="$PROJECT_DIR$/resources/views/compete/mine.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/CompeteController.php" />
+        <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/resources/views/compete/edit.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/compete/mine.blade.php" />
       </list>
     </option>
   </component>
@@ -821,12 +797,12 @@
       <workItem from="1480399292534" duration="5002000" />
       <workItem from="1480409039792" duration="18216000" />
       <workItem from="1480470578393" duration="21834000" />
-      <workItem from="1480508835873" duration="2967000" />
+      <workItem from="1480508835873" duration="3823000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181679000" />
+    <option name="totallyTimeSpent" value="182535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -846,7 +822,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328125" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.225" sideWeight="0.5129241" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16720517" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55625" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24878837" sideWeight="0.49375" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.48707592" order="6" side_tool="false" content_ui="tabs" />
@@ -921,20 +897,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/artisan">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-213">
@@ -1214,22 +1176,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/compete/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/compete/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="5" selection-start-line="3" selection-start-column="5" selection-end-line="3" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Social/GroupController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
@@ -1286,6 +1232,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/compete/detail.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="59">
+          <caret line="100" column="23" selection-start-line="100" selection-start-column="23" selection-end-line="100" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/sports/sport.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="433">
@@ -1294,38 +1248,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/compete/mine.blade.php">
+    <entry file="file://$PROJECT_DIR$/storage/framework/views/9b2e3f6dfe2b53dacf4d7cf163d415926ea826b2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="143" column="68" selection-start-line="143" selection-start-column="68" selection-end-line="143" selection-end-column="68" />
+        <state relative-caret-position="204">
+          <caret line="56" column="133" selection-start-line="56" selection-start-column="133" selection-end-line="56" selection-end-column="133" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/compete/detail.blade.php">
+    <entry file="file://$PROJECT_DIR$/阶段1/html5/compete.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="178" column="108" selection-start-line="178" selection-start-column="108" selection-end-line="178" selection-end-column="108" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="48" column="42" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="42" />
+        <state relative-caret-position="340">
+          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CompeteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="281" column="81" selection-start-line="281" selection-start-column="81" selection-end-line="281" selection-end-column="81" />
+        <state relative-caret-position="246">
+          <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
             <element signature="e#122#144#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/compete/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/compete/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/compete/mine.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="52" column="135" selection-start-line="52" selection-start-column="135" selection-end-line="52" selection-end-column="135" />
+          <folding />
         </state>
       </provider>
     </entry>

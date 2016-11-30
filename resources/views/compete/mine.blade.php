@@ -50,10 +50,11 @@
                                             <p class="category">目标:{{ $myOwn->target }}</p>
                                         </div>
                                         <div class="col-md-2">
-                                            <button class="btn btn-info">修改</button>
+                                            <button class="btn btn-info" onclick=window.location.href="{{ url('/update-compete/'.$myOwn->id) }}">修改</button>
                                         </div>
                                         <div class="col-md-2">
-                                            <button class="btn btn-warning">取消</button>
+                                            <button class="btn btn-warning" onclick="cancel({{ $myOwn->id }})">取消</button>
+
                                         </div>
                                     </div>
                                 </div>
@@ -96,7 +97,8 @@
                                     <p class="category">目标:{{ $myIn->target }}</p>
                                 </div>
                                 <div class="col-md-2">
-                                    <button class="btn btn-info" onclick=window.location.href="compete-detail.html";>详情</button>
+                                    <button class="btn btn-info"
+                                            onclick=window.location.href="{{ url('/competition/'.$myIn->id) }}";>详情</button>
                                 </div>
                                 <div class="col-md-2">
                                     <button id="btn-withdraw" class="btn btn-warning"
@@ -141,7 +143,8 @@
                                             <p class="category">目标:{{ $oneHistory->target }}</p>
                                         </div>
                                         <div class="col-md-2 col-md-offset-2">
-                                            <button class="btn btn-info">详情</button>
+                                            <button class="btn btn-info"
+                                                    onclick=window.location.href="{{ url('/competition/'.$oneHistory->id) }}";>详情</button>
                                         </div>
                                     </div>
                                 </div>
@@ -185,6 +188,12 @@
         function withdraw(cmptid){
             if(confirm("确认退出竞赛?,这样就不能获得奖励了哟~")){
                 window.location.href="/withdraw-compete/"+cmptid;
+            }
+        }
+
+        function cancel(cmptid){
+            if(confirm("确认取消本竞赛?,参与竞赛的所有用户都会收到通知.")){
+                window.location.href="/cancel-compete/"+cmptid;
             }
         }
     </script>
