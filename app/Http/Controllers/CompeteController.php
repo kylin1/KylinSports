@@ -217,20 +217,53 @@ class CompeteController extends Controller
         return $myInCmpt;
     }
 
+    /**
+     * 用户加入竞赛
+     *
+     * @param $cmptId
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     *
+     */
+    public function join($cmptId)
+    {
+        $userID = Auth::user()->id;
+        $target = CompeteMember::where([
+            'userid' => $userID, 'competeid' => $cmptId
+        ]);
+        //验证用户权限
+
+        //已经加入过了
+        if($target->first()){
+            return redirect('competition');
+        }else{
+            CompeteMember::create([
+                'userid'=>$userID,
+                'competeid'=>$cmptId,
+                'percent'=>0,
+                'getbonus'=>0,
+                'win'=>0,
+            ]);
+            return redirect('competition');
+        }
+
+    }
+
 
     /**
      * 用户从竞赛中退出
      *
      * @param $CmptID
-     * @param $userID
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function withdraw($CmptID, $userID)
+    public function withdraw($CmptID)
     {
+        $userID = Auth::user()->id;
+
         $target = CompeteMember::where([
             'userid' => $userID, 'competeid' => $CmptID
         ]);
         $bool = $target->delete();
-        return $bool;
+        return redirect('my-competition');
     }
 
     /**
@@ -246,7 +279,7 @@ class CompeteController extends Controller
 
     private function competeUser($competeId)
     {
-        $participants = CompeteMember::where('competeid', $competeId)->paginate(3);
+        $participants = CompeteMember::where('competeid', $competeId)->paginate(5);
         return $participants;
     }
 

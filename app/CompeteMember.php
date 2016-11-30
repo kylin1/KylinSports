@@ -14,4 +14,6 @@ class CompeteMember extends Model
     // 指定表名
     protected $table = 'compete_user';
 
+    protected $guarded = array();
+
 }

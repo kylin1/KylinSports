@@ -60,7 +60,8 @@
                                         </button>
                                     </div>
                                     <div class="col-md-2">
-                                        <button class="btn btn-success">加入</button>
+                                        <button id="join" class="btn btn-success"
+                                                onclick=window.location.href="{{ url('/join-compete/'.$compete->id) }}";>加入</button>
                                     </div>
                                 </div>
                             </div>
@@ -92,5 +93,5 @@
         </section>
 
     </div>
-
 @stop
+

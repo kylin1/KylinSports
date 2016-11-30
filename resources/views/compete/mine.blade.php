@@ -99,7 +99,8 @@
                                     <button class="btn btn-info" onclick=window.location.href="compete-detail.html";>详情</button>
                                 </div>
                                 <div class="col-md-2">
-                                    <button class="btn btn-warning">退出</button>
+                                    <button id="btn-withdraw" class="btn btn-warning"
+                                            onclick="withdraw( {{ $myIn->id }} )">退出</button>
                                 </div>
                             </div>
                         </div>
@@ -140,7 +141,7 @@
                                             <p class="category">目标:{{ $oneHistory->target }}</p>
                                         </div>
                                         <div class="col-md-2 col-md-offset-2">
-                                            <button class="btn btn-info" onclick=window.location.href="compete-detail.html";>详情</button>
+                                            <button class="btn btn-info">详情</button>
                                         </div>
                                     </div>
                                 </div>
@@ -177,5 +178,15 @@
 
     </div>
 
+@stop
+
+@section('javascript')
+    <script>
+        function withdraw(cmptid){
+            if(confirm("确认退出竞赛?,这样就不能获得奖励了哟~")){
+                window.location.href="/withdraw-compete/"+cmptid;
+            }
+        }
+    </script>
 @stop
 

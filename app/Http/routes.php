@@ -45,6 +45,8 @@ Route::group(['middleware' => 'web'], function () {
 
     //个人竞赛管理
     Route::get('/my-competition', 'CompeteController@myCompete');
+    Route::get('/join-compete/{cmptId}', 'CompeteController@join');
+    Route::get('/withdraw-compete/{cmptId}', 'CompeteController@withdraw');
 
     //社交信息
     Route::get('/group', 'SocialController@group');
