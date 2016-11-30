@@ -34,14 +34,15 @@
 
         <section id="section-my-compete">
             <h2>我发起的</h2>
+            @foreach($myOwnCmpt as $myOwn)
             <div class="row">
                 <div class="col-md-10">
                     <div class="card">
                         <div class="card-header" data-background-color="purple">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <h4 class="title">我发起的竞赛</h4>
-                                    <p class="category">目标:跑步距离最快达到10公里</p>
+                                    <h4 class="title">{{ $myOwn->name }}</h4>
+                                    <p class="category">目标:{{ $myOwn->target }}</p>
                                 </div>
                                 <div class="col-md-2">
                                     <button class="btn btn-info">修改</button>
@@ -61,9 +62,9 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>20/24</td>
-                                    <td>个人赛</td>
-                                    <td>3000金币</td>
+                                    <td>{{ $myOwn->currentNum }}/{{ $myOwn->number }}</td>
+                                    <td>{{ $myOwn->type }}</td>
+                                    <td>{{ $myOwn->bonus }}</td>
                                     <td>3天 2小时</td>
                                 </tr>
                                 </tbody>
@@ -73,16 +74,18 @@
                     </div>
                 </div>
             </div>
+            @endforeach
 
             <h2>我参与的</h2>
+            @foreach($myInCmpt as $myIn)
             <div class="row">
                 <div class="col-md-10">
                     <div class="card">
                         <div class="card-header" data-background-color="purple">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <h4 class="title">一个竞赛</h4>
-                                    <p class="category">目标:跑步距离最快达到10公里</p>
+                                    <h4 class="title">{{ $myIn->name }}</h4>
+                                    <p class="category">目标:{{ $myIn->target }}</p>
                                 </div>
                                 <div class="col-md-2">
                                     <button class="btn btn-info" onclick=window.location.href="compete-detail.html";>详情</button>
@@ -102,9 +105,9 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>20/24</td>
-                                    <td>个人赛</td>
-                                    <td>3000金币</td>
+                                    <td>{{ $myIn->currentNum }}/{{ $myIn->number }}</td>
+                                    <td>{{ $myIn->type }}</td>
+                                    <td>{{ $myIn->bonus }}</td>
                                     <td>即将开始</td>
                                 </tr>
                                 </tbody>
@@ -114,16 +117,18 @@
                     </div>
                 </div>
             </div>
+            @endforeach
 
             <h2>历史竞赛</h2>
+            @foreach($cmptHistory as $oneHistory)
             <div class="row">
                 <div class="col-md-10">
                     <div class="card">
                         <div class="card-header" data-background-color="purple">
                             <div class="row">
                                 <div class="col-md-8">
-                                    <h4 class="title">一个竞赛</h4>
-                                    <p class="category">目标:跑步距离最快达到10公里</p>
+                                    <h4 class="title">{{ $oneHistory->name }}</h4>
+                                    <p class="category">目标:{{ $oneHistory->target }}</p>
                                 </div>
                                 <div class="col-md-2 col-md-offset-2">
                                     <button class="btn btn-info" onclick=window.location.href="compete-detail.html";>详情</button>
@@ -141,9 +146,9 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <td>20/24</td>
-                                    <td>个人赛</td>
-                                    <td>2016-10-10至2016-10-13</td>
+                                    <td>{{ $oneHistory->currentNum }}/{{ $oneHistory->number }}</td>
+                                    <td>{{ $oneHistory->type }}</td>
+                                    <td>{{ $oneHistory->startAt }}至{{ $oneHistory->endAt }}</td>
                                     <td>1000</td>
                                     <td>是</td>
                                 </tr>
@@ -154,6 +159,7 @@
                     </div>
                 </div>
             </div>
+            @endforeach
 
         </section>
 

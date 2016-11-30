@@ -16,11 +16,11 @@ class CompeteUserTableSeeder extends Seeder
     {
 
         //
-        DB::table('group_user')->delete();
+        DB::table('compete_user')->delete();
 
-        for ($compete = 0; $compete < 50; $compete++) {
+        for ($compete = 0; $compete < 5; $compete++) {
 
-            for ($userId = 0; $userId < 20; $userId++) {
+            for ($userId = 0; $userId < 200; $userId++) {
                 CompeteMember::create([
                     'userid' => $userId,
                     'competeid' => $compete,
@@ -29,6 +29,7 @@ class CompeteUserTableSeeder extends Seeder
                     'getbonus' => rand(0,1000),
                     'win' => rand(0,1),
 
+                    'current' => rand(0,10)+0.5,
                 ]);
             }
 

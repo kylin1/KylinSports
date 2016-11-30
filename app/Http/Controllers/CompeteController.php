@@ -8,6 +8,7 @@
 
 namespace App\Http\Controllers;
 
+use App\CompeteMember;
 use App\Competition;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -65,9 +66,12 @@ class CompeteController extends Controller
     public function show($id)
     {
         $compete = Competition::find($id);
+        $competeId = $compete->id;
+        $participants = $this->competeUser($competeId);
 
         return view('compete.detail', [
             'compete' => $compete,
+            'participants' => $participants,
         ]);
     }
 
@@ -96,7 +100,7 @@ class CompeteController extends Controller
         $compete->rulemore = $request->get('rulemore');
         $compete->startAt = $request->get('startAt');
         $compete->endAt = $request->get('endAt');
-        $compete->startid = Auth::user();
+        $compete->startid = Auth::user()->id;
 
         if ($compete->save()) {
             return redirect('competition');
@@ -163,7 +167,8 @@ class CompeteController extends Controller
      */
     public function myCompete()
     {
-        $userID = Auth::user();
+        $userID = Auth::user()->id;
+
 
         $myOwnCmpt = $this->myOwnCmpt($userID);
         $myInCmpt = $this->myInCmpt($userID);
@@ -174,27 +179,42 @@ class CompeteController extends Controller
             'myOwnCmpt' => $myOwnCmpt,
             'myInCmpt' => $myInCmpt,
             'cmptHistory' => $cmptHistory,
+            'userID'=>$userID
         ]);
     }
 
     /**
      * 我发起的
-     *
      * @param $userID
+     * @return
      */
-    private function myOwnCmpt($userID)
+    public function myOwnCmpt($userID)
     {
-
+        $myOwnCmpt = Competition::where('startid', $userID)->get();
+        return $myOwnCmpt;
     }
 
     /**
      * 我参与的
      *
      * @param $userID
+     * @return array
      */
-    private function myInCmpt($userID)
+    public function myInCmpt($userID)
     {
+        $myInCmpt = array();
 
+        //用户参与的竞赛列表
+        $inCmptList = CompeteMember::where('userid', $userID)->get();
+        foreach ($inCmptList as $oneCmpt) {
+            $comptID = $oneCmpt->competeid;
+            $compete = Competition::where('id', $comptID);
+            if ($compete->first()) {
+                $myInCmpt[] = $compete->first();
+            }
+
+        }
+        return $myInCmpt;
     }
 
 
@@ -206,7 +226,11 @@ class CompeteController extends Controller
      */
     public function withdraw($CmptID, $userID)
     {
-
+        $target = CompeteMember::where([
+            'userid' => $userID, 'competeid' => $CmptID
+        ]);
+        $bool = $target->delete();
+        return $bool;
     }
 
     /**
@@ -216,7 +240,14 @@ class CompeteController extends Controller
      */
     private function cmptHistory($userID)
     {
+        $myOwnCmpt = Competition::where('startid', $userID)->get();
+        return $myOwnCmpt;
+    }
 
+    private function competeUser($competeId)
+    {
+        $participants = CompeteMember::where('competeid', $competeId)->get();
+        return $participants;
     }
 
 }
