@@ -13,7 +13,8 @@
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400,300' rel='stylesheet' type='text/css'>
+
+    <link href= {{ asset('css/open-sans.css') }} rel="stylesheet"/>
 
     <link href= {{ asset('css/pe-icon-7-stroke.css') }} rel="stylesheet" />
 
@@ -150,7 +151,7 @@
             <div class="info">
                 <h2>快来加入吧!</h2>
                 <h3>只为改变 TIME FOR CHANGE</h3>
-                <a href="signup.html"
+                <a href="{{ url('/register') }}"
                    class="btn btn-neutral btn-lg btn-fill">立即注册</a>
             </div>
         </div>

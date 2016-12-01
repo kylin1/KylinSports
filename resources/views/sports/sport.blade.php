@@ -92,42 +92,6 @@
                 </div>
             </div>
 
-            <!--心率统计-->
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header card-chart" data-background-color="red">
-                            <div class="ct-chart" id="heartRateChart"></div>
-                        </div>
-                        <div class="card-content">
-
-                            <div class="row">
-                                <div class="col-sm-4">
-                                    <h4 class="title">心率统计 (次/分钟)</h4>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="row">
-
-                        <div class="card card-stats">
-                            <div class="card-header" data-background-color="orange">
-                                <i class="material-icons">sentiment_neutral</i>
-                            </div>
-                            <div class="card-content">
-                                <p class="category">心率分析</p>
-                                <p>
-                                    你在空闲时的平均心率为80,属于良好范围,但一周之内心率上下波动较大,
-                                    也许是工作压力较大所致,请平时注意放松呦~
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             <!--跑步历史-->
             <div class="row">
@@ -165,6 +129,44 @@
                     </div>
                 </div>
             </div>
+
+            <!--心率统计-->
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header card-chart" data-background-color="red">
+                            <div class="ct-chart" id="heartRateChart"></div>
+                        </div>
+                        <div class="card-content">
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <h4 class="title">心率统计 (次/分钟)</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+
+                        <div class="card card-stats">
+                            <div class="card-header" data-background-color="orange">
+                                <i class="material-icons">sentiment_neutral</i>
+                            </div>
+                            <div class="card-content">
+                                <p class="category">心率分析</p>
+                                <p>
+                                    你在空闲时的平均心率为80,属于良好范围,但一周之内心率上下波动较大,
+                                    也许是工作压力较大所致,请平时注意放松呦~
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
 
         </section>
@@ -249,7 +251,7 @@
                             <div class="card-content">
                                 <p class="category">体重目标</p>
                                 <p>
-                                    自从3月以来,您的体重有所上升,距离减肥目标还有3KG,需要继续努力!
+                                    自从11月以来,您的体重有下降,距离减肥目标还有3KG,需要继续努力!
                                 </p>
                             </div>
                         </div>
@@ -280,7 +282,7 @@
                             <div class="card-content">
                                 <p class="category">体脂目标</p>
                                 <p>
-                                    体脂比率保持在18-20%左右,达到目标,做得漂亮!
+                                    体脂比率保持在23%左右,达到目标,做得漂亮!
                                 </p>
                             </div>
                         </div>
@@ -330,8 +332,8 @@
                         chartPadding: { top: 0, right: 15, bottom: 0, left: 20}
                     };
 
-                    var runLineChart = Chartist.Bar(document.getElementById(id), data, options, responsiveOptions);
-                    md.startAnimationForBarChart(runLineChart);
+                    var runLineChart = Chartist.Line(document.getElementById(id), data, options, responsiveOptions);
+                    md.startAnimationForLineChart(runLineChart);
                 },
 
                 createBarChart: function (id, data,high, low, yValue) {
@@ -374,9 +376,9 @@
             DrawChart.createBarChart('sleepBarChart',dataSleepBar,10,5,'h');
 
             var dataWeightChart ={!! $dataWeightChart !!};
-            DrawChart.createLineChart('weightChart',dataWeightChart,70,50,'kg');
+            DrawChart.createLineChart('weightChart',dataWeightChart,70,55,'kg');
             var dataFatChart ={!! $dataFatChart !!};
-            DrawChart.createLineChart('fatChart',dataFatChart,30,10,'%');
+            DrawChart.createLineChart('fatChart',dataFatChart,30,15,'%');
         }
     </script>
 

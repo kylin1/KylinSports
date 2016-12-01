@@ -16,6 +16,12 @@ use Illuminate\Support\Facades\DB;
 class SportController extends Controller
 {
 
+    public function landing()
+    {
+        return view('login.index');
+    }
+
+
     public function index(){
         //获取登录的用户信息
         $thisUser = Auth::user();

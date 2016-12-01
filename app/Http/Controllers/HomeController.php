@@ -21,10 +21,6 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    public function landing()
-    {
-        return view('login.index');
-    }
 
     /**
      * Show the application dashboard.

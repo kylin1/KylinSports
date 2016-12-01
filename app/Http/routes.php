@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/landing', 'SportController@landing');
+
+
 //restful注入数据接口
 Route::group(['middleware' => ['web']], function()
 {
@@ -30,7 +33,6 @@ Route::group(['middleware' => ['web']], function()
 Route::group(['middleware' => 'web'], function () {
 
     Route::auth();
-    Route::get('/landing', 'HomeController@today');
     Route::get('/', 'HomeController@today');
 
 
