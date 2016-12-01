@@ -4,6 +4,8 @@
 
 @section('style')
 
+    <link href= {{ asset('css/cloud-tag.css') }} rel="stylesheet"/>
+
 @stop
 
 @section('left-menu')
@@ -110,8 +112,29 @@
                         </div>
 
                     </div>
+
+                    <h2>好友关键字</h2>
+                    <div class="row">
+
+                        <ul id="cloud">
+                            <li><a href="#" class="tag6">游泳</a></li>
+                            <li><a href="#" class="tag8">健身房</a></li>
+                            <li><a href="#" class="tag10">跑步</a></li>
+                            <li><a href="#" class="tag2">登山</a></li>
+                            <li><a href="#" class="tag4">极限运动</a></li>
+                            <li><a href="#" class="tag6">自行车</a></li>
+                            <li><a href="#" class="tag2">减脂</a></li>
+                            <li><a href="#" class="tag8">羽毛球</a></li>
+                            <li><a href="#" class="tag2">KEEP</a></li>
+                            <li><a href="#" class="tag10">健走</a></li>
+
+                        </ul>
+
+                    </div>
                 </div>
             </div>
+
+
         </section>
 
 
