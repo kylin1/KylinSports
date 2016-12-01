@@ -48,7 +48,7 @@
         <!--1.导航栏-->
         <nav class="navbar navbar-primary navbar-absolute">
 
-            <div class="container-fluid">
+            <header class="container-fluid">
 
                 {{--导航栏头部--}}
                 <div class="navbar-header">
@@ -106,13 +106,13 @@
 
                 </div>
 
-            </div>
+            </header>
         </nav>
 
         <!--2.内容-->
-        <div class="content">
+        <section class="content">
             @yield('content')
-        </div>
+        </section>
     </div>
 
     <!--3.页脚-->

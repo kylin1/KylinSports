@@ -62,13 +62,7 @@
                                 <div class="col-sm-4">
                                     <h4 class="title">步数统计 (步数)</h4>
                                 </div>
-                                <div class="col-sm-8">
-                                    <ul class="nav navbar-nav navbar-right">
-                                        <li><a href="#">日</a></li>
-                                        <li><a href="#">周</a></li>
-                                        <li><a href="#">月</a></li>
-                                    </ul>
-                                </div>
+
                             </div>
 
                         </div>

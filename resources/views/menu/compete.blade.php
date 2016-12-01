@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="purple" data-image= {{ asset('img/sidebar-1.jpg') }} >
+<aside class="sidebar" data-color="purple" data-image= {{ asset('img/sidebar-1.jpg') }} >
 
     <!--导航左上角的图标-->
     <div class="logo">
@@ -8,7 +8,7 @@
     </div>
 
     <!--导航栏整体-->
-    <div class="sidebar-wrapper">
+    <nav class="sidebar-wrapper">
         <ul class="nav">
 
             <li>
@@ -43,5 +43,5 @@
             </li>
 
         </ul>
-    </div>
-</div>
+    </nav>
+</aside>
