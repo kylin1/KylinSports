@@ -58,7 +58,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Hi, kylin :)</a>
+                    <a class="navbar-brand" href="#">Hi, {{ Auth::user()->name }} :)</a>
                 </div>
 
                 {{--导航栏主体--}}
