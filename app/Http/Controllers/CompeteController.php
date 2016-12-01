@@ -60,9 +60,12 @@ class CompeteController extends Controller
     public function edit($id)
     {
         $compete = Competition::find($id);
+        $competeId = $compete->id;
+        $participants = $this->competeUser($competeId);
 
         return view('compete.edit', [
             'compete' => $compete,
+            'participants' => $participants,
         ]);
     }
 
