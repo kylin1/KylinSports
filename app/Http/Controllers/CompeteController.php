@@ -10,6 +10,7 @@ namespace App\Http\Controllers;
 
 use App\CompeteMember;
 use App\Competition;
+use App\Facades\UserInfoClass;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,7 +36,16 @@ class CompeteController extends Controller
      */
     public function create()
     {
-        return view('compete.create');
+        $userid = Auth::user()->id;
+        //获取用户等级
+        $userLevel = UserInfoClass::userLevel($userid);
+
+        //权限判断
+        if($userLevel <= 2){
+            return view('compete.no-right');
+        }else{
+            return view('compete.create');
+        }
     }
 
     /**
