@@ -30,11 +30,12 @@ Route::group(['middleware' => ['web']], function()
 Route::group(['middleware' => 'web'], function () {
 
     Route::auth();
+    Route::get('/landing', 'HomeController@today');
+    Route::get('/', 'HomeController@today');
 
-    Route::get('/', 'HomeController@index');
 
     //各个主界面
-    Route::get('/home', 'HomeController@index');
+    Route::get('/today', 'HomeController@today');
     Route::get('/sport', 'SportController@index');
     Route::get('/compete', 'CompeteController@index');
     Route::get('/friend', 'SocialController@index');

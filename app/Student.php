@@ -14,7 +14,6 @@ class Student extends Model
 {
     const SEX_UNKNOWN = 10;
     const SEX_MALE = 20;
-    const SEX_FEMALE = 30;
 
     // 指定表名
     protected $table = 'student';
@@ -58,7 +57,6 @@ class Student extends Model
 //        这里定义显示在界面上的字符串
             self::SEX_FEMALE => '女',
             self::SEX_MALE => '男',
-            self::SEX_UNKNOWN => '未知'
         ];
 
 //        吐血判断

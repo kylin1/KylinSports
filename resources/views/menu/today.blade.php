@@ -2,7 +2,7 @@
 
     <!--导航左上角的图标-->
     <div class="logo">
-        <a href= {{ url('/home') }} class="simple-text">
+        <a href= {{ url('/today') }} class="simple-text">
             人是会运动的苇草
         </a>
     </div>
@@ -12,7 +12,7 @@
         <ul class="nav">
 
             <li class="active">
-                <a href= {{ url('/home') }} >
+                <a href= {{ url('/today') }} >
                     <i class="material-icons">today</i>
                     <p>今日</p>
                 </a>

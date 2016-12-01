@@ -50,17 +50,17 @@
         <div class="collapse navbar-collapse" id="example" >
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="today.html">
+                    <a href="#">
                         体验
                     </a>
                 </li>
                 <li>
-                    <a href="login.html">
+                    <a href="{{ url('/login') }}">
                         登录
                     </a>
                 </li>
                 <li>
-                    <a href="signup.html">
+                    <a href="{{ url('/register') }}">
                         注册
                     </a>
                 </li>

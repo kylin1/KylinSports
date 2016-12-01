@@ -39,9 +39,9 @@
             </li>
 
             <li>
-                <a href="#">
-                    <i class="material-icons">settings</i>
-                    设置
+                <a href="{{ url('/logout') }}">
+                    <i class="material-icons">arrow_back</i>
+                    退出
                 </a>
             </li>
         </ul>

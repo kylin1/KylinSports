@@ -7,6 +7,10 @@
     <link rel="icon" type="image/png" href= {{ asset('img/favicon.png') }}/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
+    <meta name="description" content="kylin 是一个运动社交网站，独树一帜的互联网运动品牌，全国最大的全民运动社交平台，
+                            国内颠覆用户传统运动观念的倡导者和先行者。
+                            旨在帮助用户追踪自己的运动数据与健康信息,养成良好的健身习惯。">
+
     <title>kylin运动-@yield('title')</title>
 
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport'/>
@@ -91,9 +95,9 @@
                             </li>
 
                             <li>
-                                <a href="#">
-                                    <i class="material-icons">settings</i>
-                                    设置
+                                <a href="{{ url('/logout') }}">
+                                    <i class="material-icons">arrow_back</i>
+                                    退出
                                 </a>
                             </li>
                         </ul>

@@ -8,7 +8,7 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    You {{ $userid }} are logged in!
+                    You are logged in!
                 </div>
             </div>
         </div>
