@@ -121,12 +121,18 @@
                             <li><a href="#" class="tag8">健身房</a></li>
                             <li><a href="#" class="tag10">跑步</a></li>
                             <li><a href="#" class="tag2">登山</a></li>
+
                             <li><a href="#" class="tag4">极限运动</a></li>
                             <li><a href="#" class="tag6">自行车</a></li>
-                            <li><a href="#" class="tag2">减脂</a></li>
+                            <li><a href="#" class="tag3">减脂</a></li>
                             <li><a href="#" class="tag8">羽毛球</a></li>
                             <li><a href="#" class="tag2">KEEP</a></li>
                             <li><a href="#" class="tag10">健走</a></li>
+
+                            <li><a href="#" class="tag6">咕咚运动</a></li>
+                            <li><a href="#" class="tag1">小米手环</a></li>
+                            <li><a href="#" class="tag8">bond</a></li>
+                            <li><a href="#" class="tag2">南京马拉松</a></li>
 
                         </ul>
 
